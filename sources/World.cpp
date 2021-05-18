@@ -98,7 +98,7 @@ void World::add_chunk(const glm::ivec3& chunk_pos)
 			// Met à jours les pointeurs vers les chunks autours du chunk et des chunks autours
 			chunks.back()->chunks_around.push_back(chunk);
 			chunk->chunks_around.push_back(chunks.back());
-			
+
 			// Met à jour ses limites de hauteur et celles des chunks autours
 
 			if (chunks.back()->layer_min > chunk->local_layer_min)
@@ -115,7 +115,7 @@ void World::add_chunk(const glm::ivec3& chunk_pos)
 		}
 	}
 
-	// Met à jour le chunk	
+	// Met à jour le chunk
 	chunks.back()->update_all();
 
 	// Met à jour les bords des chunks autours
@@ -327,7 +327,7 @@ glm::vec3 World::get_spawn_position() const
 void World::update_mobs(const glm::vec3& player_pos)
 {
 	// Ajout des mobs
-	
+
 	if (mobs.size() < nb_max_mobs && rand_probability(0.1f) && chunks.back()->local_layer_min > water_level)
 	{
 		glm::vec3 mob_pos = glm::vec3(random_float(player_pos.x - Chunk::max_distance / 2.f, player_pos.x + Chunk::max_distance / 2.f),
@@ -350,18 +350,19 @@ void World::update_mobs(const glm::vec3& player_pos)
 	}
 
 	// Mise à jour des mobs
-	
+
 	for (auto& mob : mobs)
 		mob->update(*this, player_pos);
 
 	// Supprime les mobs trop loin
 
-	for (auto it = mobs.begin(); it != mobs.end(); it++)
+	for (auto it = mobs.begin(); it != mobs.end();)
 		if ((*it)->will_dispawn)
 		{
 			delete* it;
-			mobs.erase(it);
+			it = mobs.erase(it);
 		}
+		else it++;
 }
 
 // Affiche les blocs
