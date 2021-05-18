@@ -18,7 +18,7 @@ typedef glm::vec4 Plane;	// Type définissant un plan
 
 extern std::mutex lock;
 
-struct Window
+struct GameWindow
 {
 	static SDL_Window*		window;		// Fenêtre
 	static SDL_GLContext	context;	// Contexte

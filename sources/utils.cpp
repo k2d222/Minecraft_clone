@@ -3,14 +3,14 @@
 
 std::mutex		lock;
 
-SDL_Window*		Window::window = NULL;
-SDL_GLContext	Window::context = NULL;
-glm::ivec2		Window::size = glm::ivec2(10, 10);
-glm::ivec2		Window::center = glm::ivec2(5, 5);
+SDL_Window*		GameWindow::window = NULL;
+SDL_GLContext	GameWindow::context = NULL;
+glm::ivec2		GameWindow::size = glm::ivec2(10, 10);
+glm::ivec2		GameWindow::center = glm::ivec2(5, 5);
 
 // Initialise la fenêtre
 
-bool Window::init()
+bool GameWindow::init()
 {
 	// Initialize SDL2
 	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK) < 0)
@@ -27,7 +27,7 @@ bool Window::init()
 	center.x = size.x / 2;
 	center.y = size.y / 2;
 
-	// Create a Window
+	// Create a GameWindow
 	window = SDL_CreateWindow("Minecraft clone",	// Titre
 		SDL_WINDOWPOS_UNDEFINED,					// X Position
 		SDL_WINDOWPOS_UNDEFINED,					// Y Position
@@ -67,13 +67,13 @@ bool Window::init()
 
 // Supprime la fenêtre
 
-void Window::clear()
+void GameWindow::clear()
 {
 	if (context != NULL)
-		SDL_GL_DeleteContext(Window::context);
+		SDL_GL_DeleteContext(GameWindow::context);
 
 	if (window != NULL)
-		SDL_DestroyWindow(Window::window);
+		SDL_DestroyWindow(GameWindow::window);
 }
 
 // Passe d'un vecteur de float à un vecteur d'int

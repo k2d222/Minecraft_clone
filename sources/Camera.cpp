@@ -17,7 +17,7 @@ Camera::Camera(const glm::vec3& position, float sensitivity, float fov)
 
 	direction = glm::vec3(0.f, 0.f, -1.f);
 
-	projection = glm::perspective(fov, static_cast<float>(Window::size.x) / static_cast<float>(Window::size.y), 0.1f, 100.f);
+	projection = glm::perspective(fov, static_cast<float>(GameWindow::size.x) / static_cast<float>(GameWindow::size.y), 0.1f, 100.f);
 	view = glm::lookAt(this->position, this->position + direction, glm::vec3(0.f, 1.f, 0.f));
 
 	yaw = -90.f;
@@ -44,8 +44,8 @@ Camera& Camera::operator=(const Camera& other)
 
 void Camera::look(const glm::ivec2& mouse_pos)
 {
-	yaw += (mouse_pos.x - Window::center.x) * sensitivity;
-	pitch -= (mouse_pos.y - Window::center.y) * sensitivity;
+	yaw += (mouse_pos.x - GameWindow::center.x) * sensitivity;
+	pitch -= (mouse_pos.y - GameWindow::center.y) * sensitivity;
 
 	if (pitch > 89.f)
 		pitch = 89.f;

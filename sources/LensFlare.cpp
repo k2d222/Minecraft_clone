@@ -16,8 +16,8 @@ void LensFlare::init()
 	SDL_Surface* light_image = IMG_Load("textures/lens_flare/light.png");
 	SDL_Surface* light_rgba_image = SDL_ConvertSurfaceFormat(light_image, SDL_PIXELFORMAT_RGBA32, 0);
 
-	light_scale_matrix = glm::scale(glm::mat4(1.f), glm::vec3(size * ((float)light_rgba_image->w / (float)Window::size.x) / 2.f,
-		size * ((float)light_rgba_image->h / (float)Window::size.y) / 2.f, 1.f));
+	light_scale_matrix = glm::scale(glm::mat4(1.f), glm::vec3(size * ((float)light_rgba_image->w / (float)GameWindow::size.x) / 2.f,
+		size * ((float)light_rgba_image->h / (float)GameWindow::size.y) / 2.f, 1.f));
 
 	SDL_FreeSurface(light_image);
 	SDL_FreeSurface(light_rgba_image);
@@ -29,7 +29,7 @@ void LensFlare::init()
 		SDL_Surface* image = IMG_Load(("textures/lens_flare/shape_" + std::to_string(i) + ".png").data());
 		SDL_Surface* rgba_image = SDL_ConvertSurfaceFormat(image, SDL_PIXELFORMAT_RGBA32, 0);
 
-		scale_matrices[i] = glm::scale(glm::mat4(1.f), glm::vec3(size * (float)rgba_image->w / (float)Window::size.x, size * (float)rgba_image->h / (float)Window::size.y, 1.f));
+		scale_matrices[i] = glm::scale(glm::mat4(1.f), glm::vec3(size * (float)rgba_image->w / (float)GameWindow::size.x, size * (float)rgba_image->h / (float)GameWindow::size.y, 1.f));
 
 		SDL_FreeSurface(image);
 		SDL_FreeSurface(rgba_image);

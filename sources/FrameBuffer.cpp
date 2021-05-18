@@ -12,8 +12,8 @@ FrameBuffer::FrameBuffer()
 {
 	fbo = std::make_shared<GLuint>(0);
 	rbo = std::make_shared<GLuint>(0);
-	width = Window::size.x;
-	height = Window::size.y;
+	width = GameWindow::size.x;
+	height = GameWindow::size.y;
 }
 
 // Crée un frame buffer à partir d'un autre
@@ -130,7 +130,7 @@ void FrameBuffer::bind() const
 void FrameBuffer::unbind()
 {
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
-	glViewport(0, 0, Window::size.x, Window::size.y);
+	glViewport(0, 0, GameWindow::size.x, GameWindow::size.y);
 }
 
 // Vide le frame buffer
@@ -144,8 +144,8 @@ void FrameBuffer::clear()
 
 void FrameBuffer::init()
 {
-	game.create(Window::size.x, Window::size.y);
-	reflection.create(Window::size.x * reflection_quality, Window::size.y * reflection_quality);
-	refraction.create(Window::size.x, Window::size.y);
-	lens_flare.create(Window::size.x, Window::size.y);
+	game.create(GameWindow::size.x, GameWindow::size.y);
+	reflection.create(GameWindow::size.x * reflection_quality, GameWindow::size.y * reflection_quality);
+	refraction.create(GameWindow::size.x, GameWindow::size.y);
+	lens_flare.create(GameWindow::size.x, GameWindow::size.y);
 }

@@ -67,8 +67,8 @@ void Game::checks_events(const SDL_Event& my_event)
 	{
 		stop_moving = !stop_moving;
 		SDL_ShowCursor(stop_moving);
-		SDL_WarpMouseInWindow(Window::window, Window::center.x, Window::center.y);
-		glm::ivec2 mouse_pos = Window::center;
+		SDL_WarpMouseInWindow(GameWindow::window, GameWindow::center.x, GameWindow::center.y);
+		glm::ivec2 mouse_pos = GameWindow::center;
 		SDL_Delay(100);
 	}
 
@@ -92,7 +92,7 @@ void Game::update(glm::ivec2& mouse_pos)
 	{
 		SDL_GetMouseState(&mouse_pos.x, &mouse_pos.y);
 		player.look(mouse_pos);
-		SDL_WarpMouseInWindow(Window::window, Window::center.x, Window::center.y);
+		SDL_WarpMouseInWindow(GameWindow::window, GameWindow::center.x, GameWindow::center.y);
 	}
 
 	player.update_head();
@@ -124,7 +124,7 @@ void Game::draw()
 		FrameBuffer::refraction.bind();
 		{
 			FrameBuffer::clear();
-			
+
 			player.draw(render_camera, lights, Plane(0.f, 1.f, 0.f, -water_level));
 			world.draw_mobs(render_camera, lights, Plane(0.f, 1.f, 0.f, -water_level));
 			world.draw(render_camera, lights, Plane(0.f, 1.f, 0.f, -water_level + 0.4f));
@@ -142,7 +142,7 @@ void Game::draw()
 		FrameBuffer::game.bind();
 		{
 			FrameBuffer::clear();
-			
+
 			player.draw(render_camera, lights, Plane(0.f, -1.f, 0.f, water_level));
 			world.draw_mobs(render_camera, lights, Plane(0.f, -1.f, 0.f, water_level));
 			world.draw(render_camera, lights, Plane(0.f, -1.f, 0.f, water_level));
@@ -165,7 +165,7 @@ void Game::draw()
 		// Fait le rendu de la reflection
 
 		render_camera.invert(water_level);
-		render_camera.change_resolution(Window::size.x * reflection_quality, Window::size.y * reflection_quality);
+		render_camera.change_resolution(GameWindow::size.x * reflection_quality, GameWindow::size.y * reflection_quality);
 		fake_cam = true;
 
 		FrameBuffer::reflection.bind();
@@ -184,7 +184,7 @@ void Game::draw()
 		// Fait le rendu de la refraction
 
 		render_camera = fix_cam ? fixed_cam : player.camera;
-		render_camera.change_resolution(Window::size.x, Window::size.y);
+		render_camera.change_resolution(GameWindow::size.x, GameWindow::size.y);
 		fake_cam = false;
 
 		FrameBuffer::refraction.bind();
