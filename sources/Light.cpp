@@ -1,6 +1,6 @@
 #include "Light.h"
 
-// Crée une lumière
+// CrÃ©e une lumiÃ¨re
 
 Light::Light()
 {
@@ -10,14 +10,14 @@ Light::Light()
 	intensity = 0.f;
 }
 
-// Crée une lumière à partir d'une autre
+// CrÃ©e une lumiÃ¨re Ã  partir d'une autre
 
 Light::Light(const Light& other)
 {
 	*this = other;
 }
 
-// Crée une lumière à partir de ces propriétés
+// CrÃ©e une lumiÃ¨re Ã  partir de ces propriÃ©tÃ©s
 
 Light::Light(Type type, const glm::vec3& vector, const Color& color, float intensity)
 {
@@ -27,7 +27,7 @@ Light::Light(Type type, const glm::vec3& vector, const Color& color, float inten
 	set_intensity(intensity);
 }
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 Light& Light::operator=(const Light& other)
 {
@@ -39,28 +39,28 @@ Light& Light::operator=(const Light& other)
 	return *this;
 }
 
-// Donne le type de la lumière
+// Donne le type de la lumiÃ¨re
 
 Light::Type Light::get_type() const
 {
 	return type;
 }
 
-// Change le type de la lumière
+// Change le type de la lumiÃ¨re
 
 void Light::set_type(Type type)
 {
 	this->type = type;
 }
 
-// Donne la position ou la direction de la lumière
+// Donne la position ou la direction de la lumiÃ¨re
 
 glm::vec3 Light::get_vector() const
 {
 	return vector;
 }
 
-// Change la position ou la direction de la lumière
+// Change la position ou la direction de la lumiÃ¨re
 
 void Light::set_vector(const glm::vec3& vector)
 {
@@ -95,14 +95,14 @@ void Light::set_color(const Color& color)
 	this->color.a = 1.f;
 }
 
-// Donne l'intensité
+// Donne l'intensitÃ©
 
 float Light::get_intensity() const
 {
 	return intensity;
 }
 
-// Change l'intensité
+// Change l'intensitÃ©
 
 void Light::set_intensity(float intensity)
 {

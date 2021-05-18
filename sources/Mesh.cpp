@@ -10,7 +10,7 @@ const Mesh	Mesh::sphere_64		= Mesh::Sphere(64, 64);
 const Mesh	Mesh::square		= Mesh::Square();
 const Mesh	Mesh::screen		= Mesh::Screen();
 
-// Crée un maillage
+// CrÃ©e un maillage
 
 Mesh::Mesh()
 {
@@ -19,14 +19,14 @@ Mesh::Mesh()
 	texcoords.clear();
 }
 
-// Crée un maillage à partir d'un autre
+// CrÃ©e un maillage Ã  partir d'un autre
 
 Mesh::Mesh(const Mesh& other)
 {
 	*this = other;
 }
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 Mesh& Mesh::operator=(const Mesh& other)
 {
@@ -37,7 +37,7 @@ Mesh& Mesh::operator=(const Mesh& other)
 	return *this;
 }
 
-// Opérateur d'ajout
+// OpÃ©rateur d'ajout
 
 Mesh& Mesh::operator+=(const Mesh& other)
 {
@@ -53,7 +53,7 @@ Mesh& Mesh::operator+=(const Mesh& other)
 	return *this;
 }
 
-// Opérateur d'addition
+// OpÃ©rateur d'addition
 
 Mesh Mesh::operator+(const Mesh& other)
 {
@@ -94,14 +94,14 @@ const float* Mesh::get_normals() const
 	return normals.data();
 }
 
-// Donne les coordonnées de texture
+// Donne les coordonnÃ©es de texture
 
 const float* Mesh::get_texcoords() const
 {
 	return texcoords.data();
 }
 
-// Donne la tailles des données en octets
+// Donne la tailles des donnÃ©es en octets
 
 uint32_t Mesh::get_data_size() const
 {
@@ -122,7 +122,7 @@ uint32_t Mesh::get_normals_size() const
 	return normals.size() * sizeof(float);
 }
 
-// Donne la taille des coordonnées de texture en octets
+// Donne la taille des coordonnÃ©es de texture en octets
 
 uint32_t Mesh::get_texcoords_size() const
 {
@@ -145,7 +145,7 @@ void Mesh::clear()
 	texcoords.clear();
 }
 
-// Crée un cercle
+// CrÃ©e un cercle
 
 Mesh Mesh::Circle(uint16_t nb_edges)
 {
@@ -183,7 +183,7 @@ Mesh Mesh::Circle(uint16_t nb_edges)
 	return mesh;
 }
 
-// Crée un cône
+// CrÃ©e un cÃ´ne
 
 Mesh Mesh::Cone(uint16_t nb_lattitudes)
 {
@@ -242,7 +242,7 @@ Mesh Mesh::Cone(uint16_t nb_lattitudes)
 	return mesh;
 }
 
-// Crée un cube
+// CrÃ©e un cube
 
 Mesh Mesh::Cube()
 {
@@ -404,7 +404,7 @@ Mesh Mesh::Cube()
 	return mesh;
 }
 
-// Crée un cube avec juste les arrêtes
+// CrÃ©e un cube avec juste les arrÃªtes
 
 Mesh Mesh::EmptyCube()
 {
@@ -518,7 +518,7 @@ Mesh Mesh::EmptyCube()
 	return mesh;
 }
 
-// Crée un cylindre
+// CrÃ©e un cylindre
 
 Mesh Mesh::Cylinder(uint16_t nb_lattitudes)
 {
@@ -572,7 +572,7 @@ Mesh Mesh::Cylinder(uint16_t nb_lattitudes)
 	return mesh;
 }
 
-// Crée une sphère
+// CrÃ©e une sphÃ¨re
 
 Mesh Mesh::Sphere(uint16_t nb_latitudes, uint16_t nb_longitudes)
 {
@@ -642,7 +642,7 @@ Mesh Mesh::Sphere(uint16_t nb_latitudes, uint16_t nb_longitudes)
 	return mesh;
 }
 
-// Crée un carré
+// CrÃ©e un carrÃ©
 
 Mesh Mesh::Square()
 {
@@ -681,7 +681,7 @@ Mesh Mesh::Square()
 	return mesh;
 }
 
-// Crée un écran
+// CrÃ©e un Ã©cran
 
 Mesh Mesh::Screen()
 {
@@ -720,7 +720,7 @@ Mesh Mesh::Screen()
 	return mesh;
 }
 
-// Applique une matrice à chaque point d'un maillage
+// Applique une matrice Ã  chaque point d'un maillage
 
 Mesh operator*(const glm::mat4& matrix, const Mesh& mesh)
 {
@@ -755,7 +755,7 @@ Mesh operator*(const glm::mat4& matrix, const Mesh& mesh)
 	return result;
 }
 
-// Donne les coordonnées de texture du haut d'un cube à partir de son orientation
+// Donne les coordonnÃ©es de texture du haut d'un cube Ã  partir de son orientation
 
 std::vector<float> oriented_top_texcoord(uint8_t orientation)
 {

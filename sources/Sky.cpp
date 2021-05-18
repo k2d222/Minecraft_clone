@@ -5,7 +5,7 @@
 
 glm::mat4 Sky::scale_matrix = glm::scale(glm::mat4(1.f), glm::vec3(distance * 2.f, distance * 2.f, distance * 2.f));
 
-// Crée le ciel
+// CrÃ©e le ciel
 
 Sky::Sky()
 {
@@ -14,7 +14,7 @@ Sky::Sky()
 	model = glm::mat4(1.f);
 }
 
-// Crée le ciel à partir d'un autre
+// CrÃ©e le ciel Ã  partir d'un autre
 
 Sky::Sky(const Sky& other)
 {
@@ -34,7 +34,7 @@ void Sky::init()
 	object.send_data(Shader::sky, Mesh::sphere_64, DataType::Positions);
 }
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 Sky& Sky::operator=(const Sky& other)
 {
@@ -47,7 +47,7 @@ Sky& Sky::operator=(const Sky& other)
 	return *this;
 }
 
-// Met à jour le ciel
+// Met Ã  jour le ciel
 
 void Sky::update(const glm::vec3& player_pos, float sun_height)
 {
@@ -101,7 +101,7 @@ void Sky::draw(const Camera& camera, const std::vector<const Light*>& lights) co
 	glFrontFace(GL_CCW);
 }
 
-// Donne un pointeur vers la lumière du ciel
+// Donne un pointeur vers la lumiÃ¨re du ciel
 
 const Light* Sky::get_light() const
 {

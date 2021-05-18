@@ -3,23 +3,23 @@
 
 #include "utils.h"
 
-// Classe définissant un matériaux
+// Classe dÃ©finissant un matÃ©riaux
 
 class Material
 {
 private:
 
 	Color			color;		// Couleur
-	float			ambient;	// Niveau de lumière ambiante
-	float			diffuse;	// Niveau de lumière diffuse
-	float			specular;	// Niveau de lumière spéculaire
+	float			ambient;	// Niveau de lumiÃ¨re ambiante
+	float			diffuse;	// Niveau de lumiÃ¨re diffuse
+	float			specular;	// Niveau de lumiÃ¨re spÃ©culaire
 	float			shininess;	// Taille du reflet
 
 public:
 
-	static Material	block;		// Matériaux des blocs
-	static Material	entity;		// Matériaux des entitées
-	static Material	water;		// Matériaux de l'eau
+	static Material	block;		// MatÃ©riaux des blocs
+	static Material	entity;		// MatÃ©riaux des entitÃ©es
+	static Material	water;		// MatÃ©riaux de l'eau
 
 					Material();
 					Material(const Material& other);

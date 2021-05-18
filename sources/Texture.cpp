@@ -11,28 +11,28 @@ Texture Texture::wolf;
 Texture Texture::fox;
 Texture Texture::chicken;
 
-// Crée une texture
+// CrÃ©e une texture
 
 Texture::Texture()
 {
 	id = std::make_shared<GLuint>(0);
 }
 
-// Crée une texture à partir d'une autre
+// CrÃ©e une texture Ã  partir d'une autre
 
 Texture::Texture(const Texture& other)
 {
 	*this = other;
 }
 
-// Crée une texture à partir d'une image
+// CrÃ©e une texture Ã  partir d'une image
 
 Texture::Texture(const std::string& path)
 {
 	load(path);
 }
 
-// Détruit une texture
+// DÃ©truit une texture
 
 Texture::~Texture()
 {
@@ -40,7 +40,7 @@ Texture::~Texture()
 		glDeleteTextures(1, &(*id));
 }
 
-// Opérateur égal (attention ce n'est pas une vraie copie, à utiliser pour déplacer une texture mais pas pour en créer une nouvelle)
+// OpÃ©rateur Ã©gal (attention ce n'est pas une vraie copie, Ã  utiliser pour dÃ©placer une texture mais pas pour en crÃ©er une nouvelle)
 
 Texture& Texture::operator=(const Texture& other)
 {
@@ -52,7 +52,7 @@ Texture& Texture::operator=(const Texture& other)
 	return *this;
 }
 
-// Applique une image à la texture
+// Applique une image Ã  la texture
 
 void Texture::load(const std::string& path, GLenum wrapping, GLint filtering)
 {
@@ -116,7 +116,7 @@ void Texture::unbind()
 	glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-// Ouvre les textures utilisées dans le programme
+// Ouvre les textures utilisÃ©es dans le programme
 
 void Texture::init()
 {

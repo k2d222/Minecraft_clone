@@ -3,22 +3,22 @@
 
 #include "utils.h"
 
-// Classe définissant une lumière
+// Classe dÃ©finissant une lumiÃ¨re
 
 struct Light
 {
 public:
 
-	// Enum définissant le type de lumière
+	// Enum dÃ©finissant le type de lumiÃ¨re
 
 	enum class Type { Ambient = 0, Directional = 1, Point = 2 };
 
 private:
 
-	Type		type;		// type de lumière
+	Type		type;		// type de lumiÃ¨re
 	glm::vec3	vector;		// Direction ou position
 	Color		color;		// Couleur
-	float		intensity;	// intensitée
+	float		intensity;	// intensitÃ©e
 
 public:
 

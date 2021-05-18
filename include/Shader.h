@@ -42,7 +42,7 @@
 
 // std::cout ???
 
-// Classe définissant un shader
+// Classe dÃ©finissant un shader
 
 class Shader
 {
@@ -63,7 +63,7 @@ public:
 	static Shader			sky;		// Shader du ciel
 	static Shader			luminary;	// Shader des astres
 	static Shader			water;		// Shader de l'eau
-	static Shader			in_water;	// Shader de l'eau quand la caméra est sous l'eau
+	static Shader			in_water;	// Shader de l'eau quand la camÃ©ra est sous l'eau
 	static Shader			screen;		// Shader du post-processing
 	static Shader			lens_flare;	// Shader des lens flares
 	static Shader			debug;		// Shader de debug

@@ -8,7 +8,7 @@ SDL_GLContext	Window::context = NULL;
 glm::ivec2		Window::size = glm::ivec2(10, 10);
 glm::ivec2		Window::center = glm::ivec2(5, 5);
 
-// Initialise la fenêtre
+// Initialise la fenÃªtre
 
 bool Window::init()
 {
@@ -65,7 +65,7 @@ bool Window::init()
 	return true;
 }
 
-// Supprime la fenêtre
+// Supprime la fenÃªtre
 
 void Window::clear()
 {
@@ -76,28 +76,28 @@ void Window::clear()
 		SDL_DestroyWindow(Window::window);
 }
 
-// Passe d'un vecteur de float à un vecteur d'int
+// Passe d'un vecteur de float Ã  un vecteur d'int
 
 glm::ivec3 round(const glm::vec3& vector)
 {
 	return glm::ivec3(std::round(vector.x), std::round(vector.y), std::round(vector.z));
 }
 
-// Donne un int aléatoire entre min et max
+// Donne un int alÃ©atoire entre min et max
 
 int32_t random_int(int32_t min, int32_t max)
 {
 	return (rand() % (max - min)) + min;
 }
 
-// Donne un float aléatoire entre min et max
+// Donne un float alÃ©atoire entre min et max
 
 float random_float(float min, float max)
 {
 	return (rand() / static_cast<float>(RAND_MAX)) * (max - min) + min;
 }
 
-// Donne vrai avec une probabilité donnée
+// Donne vrai avec une probabilitÃ© donnÃ©e
 
 bool rand_probability(float probability)
 {
@@ -133,7 +133,7 @@ void set_horizontal_norm(glm::vec3& vector, float value)
 	}
 }
 
-// Opérateur de multiplication
+// OpÃ©rateur de multiplication
 
 glm::vec3 operator*(const glm::mat4& matrix, const glm::vec3& vector)
 {

@@ -4,7 +4,7 @@
 #include "utils.h"
 #include "Texture.h"
 
-// Classe définissant un frame buffer
+// Classe dÃ©finissant un frame buffer
 
 class FrameBuffer
 {
@@ -13,14 +13,14 @@ private:
 	std::shared_ptr<GLuint>	fbo;		// Id du frame buffer
 	Texture					texture;	// Texture du frame buffer
 	std::shared_ptr<GLuint>	rbo;		// Id du depth/stencil buffer
-	uint16_t				width;		// Résolution (largeur)
-	uint16_t				height;		// Résolution (hauteur)
+	uint16_t				width;		// RÃ©solution (largeur)
+	uint16_t				height;		// RÃ©solution (hauteur)
 
 public:
 
 	static FrameBuffer		game;		// Frame buffer pour le post processing
-	static FrameBuffer		reflection;	// Frame buffer pour la réflection sur l'eau
-	static FrameBuffer		refraction;	// Frame buffer pour la réfraction sur l'eau
+	static FrameBuffer		reflection;	// Frame buffer pour la rÃ©flection sur l'eau
+	static FrameBuffer		refraction;	// Frame buffer pour la rÃ©fraction sur l'eau
 	static FrameBuffer		lens_flare;	// Frame buffer pour les lens flares
 
 							FrameBuffer();

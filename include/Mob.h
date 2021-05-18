@@ -6,7 +6,7 @@
 
 class World;
 
-// Classe définissant un mob
+// Classe dÃ©finissant un mob
 
 class Mob : public Entity
 {
@@ -14,9 +14,9 @@ private:
 
 	int				time_check;			// Temps avant de marcher
 	int				tempo;				// Temps avant de resauter
-	int				time_check_rand;	// Temps aléatoire
+	int				time_check_rand;	// Temps alÃ©atoire
 	float			animation_frame;	// Frame actuelle de l'animation
-	bool			is_animated;		// Est animé
+	bool			is_animated;		// Est animÃ©
 	bool			will_dispawn;		// Va disparaitre
 
 public:

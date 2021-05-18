@@ -3,15 +3,15 @@
 
 #include "Mob.h"
 
-// Classe définissant une poule
+// Classe dÃ©finissant une poule
 
 class Chicken : public Mob
 {
 	private:
 		
-		Part		head;					// Tête
-		Part		shoulder_1;				// Épaule gauche
-		Part		shoulder_2;				// Épaule droite
+		Part		head;					// TÃªte
+		Part		shoulder_1;				// Ã‰paule gauche
+		Part		shoulder_2;				// Ã‰paule droite
 		Part		hips_1;					// Hanche gauche
 		Part		hips_2;					// Hanche droite
 		Part		leg;					// Jambe
@@ -22,8 +22,8 @@ class Chicken : public Mob
 		Part		beak_bottom;			// Partie sous le bec
 		Part		wattle;					// Barbillon
 		glm::mat4	beak_bottom_initial;	// Matrice initiale du dessous du bec
-		glm::mat4	shoulder_1_initial;		// Matrice initiale de l'épaule gauche
-		glm::mat4	shoulder_2_initial;		// Matrice initiale de l'épaule droite
+		glm::mat4	shoulder_1_initial;		// Matrice initiale de l'Ã©paule gauche
+		glm::mat4	shoulder_2_initial;		// Matrice initiale de l'Ã©paule droite
 		glm::mat4	hips_1_initial;			// Matrice initiale de la hanche gauche
 		glm::mat4	hips_2_initial;			// Matrice initiale de la hanche droite
 

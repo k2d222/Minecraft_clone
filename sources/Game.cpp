@@ -36,7 +36,7 @@ void Game::init()
 	player = Player(world.get_spawn_position());
 }
 
-// Prend en compte les évenements
+// Prend en compte les Ã©venements
 
 void Game::checks_events(const SDL_Event& my_event)
 {
@@ -54,7 +54,7 @@ void Game::checks_events(const SDL_Event& my_event)
 		if (my_event.key.keysym.sym == SDLK_F5)
 			player.first_person = !player.first_person;
 
-		// Fixer la caméra
+		// Fixer la camÃ©ra
 		if (my_event.key.keysym.sym == SDLK_o)
 		{
 			fix_cam = !fix_cam;
@@ -62,7 +62,7 @@ void Game::checks_events(const SDL_Event& my_event)
 		}
 	}
 
-	// Quitter la fenêtre
+	// Quitter la fenÃªtre
 	if ((my_event.type == SDL_KEYUP && my_event.key.keysym.sym == SDLK_ESCAPE) || (stop_moving && my_event.type == SDL_MOUSEBUTTONUP))
 	{
 		stop_moving = !stop_moving;
@@ -77,16 +77,16 @@ void Game::checks_events(const SDL_Event& my_event)
 		player.break_block();
 }
 
-// Met à jour le jeu
+// Met Ã  jour le jeu
 
 void Game::update(glm::ivec2& mouse_pos)
 {
 	time += frame_duration;
 
-	// Déplacement
+	// DÃ©placement
 	player.move(SDL_GetKeyboardState(NULL), world);
 
-	// Caméra
+	// CamÃ©ra
 
 	if (!stop_moving)
 	{
@@ -98,19 +98,19 @@ void Game::update(glm::ivec2& mouse_pos)
 	player.update_head();
 	in_water = player.camera.get_position().y < water_level;
 
-	// Génération
+	// GÃ©nÃ©ration
 	world.send_meshes();
 
 	// Update des mobs
 	world.update_mobs(player.get_position());
 
-	// Météo
+	// MÃ©tÃ©o
 	sun.update(player.get_position());
 	moon.update(player.get_position());
 	sky.update(player.get_position(), sun.get_position().y - player.get_position().y);
 }
 
-// Affiche les éléments du jeu
+// Affiche les Ã©lÃ©ments du jeu
 
 void Game::draw()
 {

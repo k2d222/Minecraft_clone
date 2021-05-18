@@ -1,6 +1,6 @@
 #include "Fox.h"
 
-// Crée un renard
+// CrÃ©e un renard
 
 Fox::Fox() : Mob()
 {
@@ -12,14 +12,14 @@ Fox::Fox() : Mob()
 	tail_initial = glm::mat4(1.f);
 }
 
-// Crée un renard à partir d'un autre
+// CrÃ©e un renard Ã  partir d'un autre
 
 Fox::Fox(const Fox& other)
 {
 	*this = other;
 }
 
-// Crée un renard à partir de ces paramètres
+// CrÃ©e un renard Ã  partir de ces paramÃ¨tres
 
 Fox::Fox(const glm::vec3& position) : Mob()
 {
@@ -88,7 +88,7 @@ Fox::Fox(const glm::vec3& position) : Mob()
 	move(this->position);
 }
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 Fox& Fox::operator=(const Fox& other)
 {

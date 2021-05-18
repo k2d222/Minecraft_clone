@@ -14,8 +14,8 @@ constexpr uint8_t	dirt_stone_limit		= 60;		// Limite entre l'herbe et la montagn
 constexpr uint8_t	stone_snow_limit		= 80;		// Limite entre la pierre et la neige
 constexpr float		water_level				= 31.2f;	// Hauteur de l'eau
 constexpr uint8_t	tree_height				= 7;		// Hauteur des arbres
-constexpr float		gravity					= 30.f;		// Force de la gravité
-constexpr uint16_t	nb_max_lights			= 10;		// Nombre maximum de lumières
+constexpr float		gravity					= 30.f;		// Force de la gravitÃ©
+constexpr uint16_t	nb_max_lights			= 10;		// Nombre maximum de lumiÃ¨res
 constexpr uint16_t	nb_max_mobs				= 20;		// Nombre maximum de mobs
 
 class Player;
@@ -23,15 +23,15 @@ class Block;
 class Chunk;
 class Mob;
 
-// Classe représentant le monde
+// Classe reprÃ©sentant le monde
 
 class World
 {
 private:
 
-	std::list<Chunk*>		chunks;				// Liste des chunks chargés
-	std::list<glm::ivec3>	future_chunks_pos;	// Liste des chunks autours des chunks chargés
-	std::list<Mob*>			mobs;				// Liste des mobs chargées
+	std::list<Chunk*>		chunks;				// Liste des chunks chargÃ©s
+	std::list<glm::ivec3>	future_chunks_pos;	// Liste des chunks autours des chunks chargÃ©s
+	std::list<Mob*>			mobs;				// Liste des mobs chargÃ©es
 
 public:
 

@@ -4,7 +4,7 @@
 #include "utils.h"
 #include "Luminary.h"
 
-// Classe définissant le soleil
+// Classe dÃ©finissant le soleil
 
 class Sun : public Luminary
 {

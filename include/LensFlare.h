@@ -6,7 +6,7 @@
 #include "Texture.h"
 #include "Camera.h"
 
-// Classe définissant un lens flare
+// Classe dÃ©finissant un lens flare
 
 class LensFlare
 {
@@ -20,8 +20,8 @@ private:
 
 	static std::array<Texture, nb_shapes>	textures;			// Texture de chaque forme
 	static std::array<glm::mat4, nb_shapes>	scale_matrices;		// Taille de chaque forme
-	static Texture							light_texture;		// Texture de la forme de la lumière
-	static glm::mat4						light_scale_matrix;	// Taille de la forme de la lumière
+	static Texture							light_texture;		// Texture de la forme de la lumiÃ¨re
+	static glm::mat4						light_scale_matrix;	// Taille de la forme de la lumiÃ¨re
 	static VertexBuffer						object;				// Vertex buffer OpenGL
 
 public:

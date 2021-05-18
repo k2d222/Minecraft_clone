@@ -15,7 +15,7 @@ class World;
 class Game;
 class Entity;
 
-// Classe définissant un chunk
+// Classe dÃ©finissant un chunk
 
 class Chunk
 {
@@ -23,19 +23,19 @@ public:
 
 	static constexpr uint8_t	size = 16;					// Largeur d'un chunk
 	static constexpr uint8_t	height = 128;				// Hauteur d'un chunk
-	static constexpr uint16_t	max_distance = 20 * size;	// Distance maximum des chunks chargés
+	static constexpr uint16_t	max_distance = 20 * size;	// Distance maximum des chunks chargÃ©s
 
 	typedef std::array<std::array<std::array<Block, size>, height>, size> BlockArray;
 
 	// Tentative de faire fonctionner les arbres en bordure de chunk :(
 
 	/*
-	// Structure représentant une liste de feuilles à ajouter
+	// Structure reprÃ©sentant une liste de feuilles Ã  ajouter
 
 	struct LeavesToAdd
 	{
-		glm::ivec3					chunk;	// Chunk où se trouve les feuilles
-		std::vector<glm::ivec3>		leaves;	// Feuilles à ajouter
+		glm::ivec3					chunk;	// Chunk oÃ¹ se trouve les feuilles
+		std::vector<glm::ivec3>		leaves;	// Feuilles Ã  ajouter
 
 									LeavesToAdd();
 									LeavesToAdd(const glm::ivec3& chunk_position);
@@ -54,10 +54,10 @@ private:
 	uint8_t						local_layer_max;			// Couche la plus haute
 	uint8_t						layer_min;					// Couche la plus basse
 	uint8_t						layer_max;					// Couche la plus haute
-	bool						as_updated;					// A mis à jour ses vertices
-	bool						as_sent;					// A envoyé ses vertices au shader
+	bool						as_updated;					// A mis Ã  jour ses vertices
+	bool						as_sent;					// A envoyÃ© ses vertices au shader
 	std::list<Chunk*>			chunks_around;				// Chunks autour
-	Mesh						mesh;						// Géométrie
+	Mesh						mesh;						// GÃ©omÃ©trie
 	VertexBuffer				object;						// Vertex Buffer OpenGl
 	bool						as_water;					// Comporte de l'eau
 

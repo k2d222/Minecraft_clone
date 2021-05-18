@@ -10,7 +10,7 @@
 
 class Player;
 
-// Classe définissant le model 3D du joueur
+// Classe dÃ©finissant le model 3D du joueur
 
 class Skin
 {
@@ -20,10 +20,10 @@ public:
 	static constexpr float strength_step		= max_walk_strength / 10.f;	// Vitesse pour atteindre la taille max
 	static constexpr float walk_anim_speed		= 0.2f;						// Vitesse des pas
 	static constexpr float turn_speed			= 0.1f;						// Vitesse de l'animation de rotation
-	static constexpr float max_head_rotation	= pi / 4.f;					// Limite de la rotation de la tête
+	static constexpr float max_head_rotation	= pi / 4.f;					// Limite de la rotation de la tÃªte
 	static constexpr float texture_size			= 64.f;						// Taille de la texture du skin
 
-	// Classe définissant une partie du model
+	// Classe dÃ©finissant une partie du model
 
 	class Part
 	{
@@ -32,7 +32,7 @@ public:
 		VertexBuffer				object;				// Vertex buffer OpenGL
 		glm::mat4					propagated_matrix;	// Matrice de propagation
 		glm::mat4					local_matrix;		// Matrice locale
-		std::vector<Part*>			children;			// Parties reliées au
+		std::vector<Part*>			children;			// Parties reliÃ©es au
 
 	public:
 
@@ -60,25 +60,25 @@ private:
 	Part		hips_1;				// Hanche gauche
 	Part		leg_2;				// Jambe droite
 	Part		hips_2;				// Hanche droite
-	Part		camera;				// Caméra
-	Part		head;				// Tête
+	Part		camera;				// CamÃ©ra
+	Part		head;				// TÃªte
 	Part		neck;				// Cou
 	Part		body;				// Corps
 	bool		walking;			// Est en train de courir
 	bool		running;			// Est en train de courir
-	bool		forward;			// Est tourné vers l'avant
-	bool		left;				// Est tourné vers la gauche
-	bool		right;				// Est tourné vers la droite
-	bool		back;				// Est tourné vers l'arrière
+	bool		forward;			// Est tournÃ© vers l'avant
+	bool		left;				// Est tournÃ© vers la gauche
+	bool		right;				// Est tournÃ© vers la droite
+	bool		back;				// Est tournÃ© vers l'arriÃ¨re
 	uint32_t	animation_i;		// Etat actuel de l'animation
 	float		walk_strength;		// Taille des pas
-	glm::mat4	shoulder_1_initial;	// Matrice initiale de l'épaule gauche
-	glm::mat4	shoulder_2_initial;	// Matrice initiale de l'épaule droite
+	glm::mat4	shoulder_1_initial;	// Matrice initiale de l'Ã©paule gauche
+	glm::mat4	shoulder_2_initial;	// Matrice initiale de l'Ã©paule droite
 	glm::mat4	hips_1_initial;		// Matrice initiale de la hanche gauche
 	glm::mat4	hips_2_initial;		// Matrice initiale de la hanche droite
 	glm::mat4	neck_initial;		// Matrice initiale du cou
 	float		body_angle;			// Angle du corps
-	float		head_angle;			// Angle de la tête
+	float		head_angle;			// Angle de la tÃªte
 
 public:
 

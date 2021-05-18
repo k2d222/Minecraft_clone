@@ -10,7 +10,7 @@
 #include "Material.h"
 #include "Light.h"
 
-// Classe définissant un joueur
+// Classe dÃ©finissant un joueur
 
 class Player // : Entity :(
 {
@@ -25,7 +25,7 @@ public:
 private:
 
 	Skin						skin;					// Model 3D du joueur
-	glm::vec3					previous_pos;			// Position précédente
+	glm::vec3					previous_pos;			// Position prÃ©cÃ©dente
 	glm::vec3					position;				// Position du joueur
 	std::array<glm::vec3, 12>	hitbox;					// Hitbox du joueur
 	glm::vec3					speed;					// Vitesse du joueur
@@ -34,9 +34,9 @@ private:
 
 public:
 
-	Camera						camera;					// Caméra
-	bool						fly;					// Vol activé
-	bool						first_person;			// Vu première personne
+	Camera						camera;					// CamÃ©ra
+	bool						fly;					// Vol activÃ©
+	bool						first_person;			// Vu premiÃ¨re personne
 
 								Player();
 								Player(const Player& other);

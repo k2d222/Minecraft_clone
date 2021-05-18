@@ -5,21 +5,21 @@
 #include "Mesh.h"
 #include "Shader.h"
 
-// Enum définissant le type de dessin
+// Enum dÃ©finissant le type de dessin
 
 enum class DrawType { Triangles = GL_TRIANGLES, Lines = GL_LINES, Points = GL_POINTS };
 
-// Enum définissant le type de données à envoyer au shader
+// Enum dÃ©finissant le type de donnÃ©es Ã  envoyer au shader
 
 enum class DataType : uint8_t { Positions = 1, Normals = 2, TexCoords = 4, All = 7 };
 
-// Classe définissant un vertex buffer
+// Classe dÃ©finissant un vertex buffer
 
 class VertexBuffer
 {
 private:
 
-	Shader*					shader;			// Pointeur vers le shader utilisé
+	Shader*					shader;			// Pointeur vers le shader utilisÃ©
 	std::shared_ptr<GLuint>	vbo;			// Id du vertex buffer oject
 	std::shared_ptr<GLuint>	vao;			// Id du vertex array object
 	uint32_t				nb_vertices;	// Nombre de vertices

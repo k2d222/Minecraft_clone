@@ -6,7 +6,7 @@ FrameBuffer FrameBuffer::reflection;
 FrameBuffer FrameBuffer::refraction;
 FrameBuffer FrameBuffer::lens_flare;
 
-// Crée un frame buffer
+// CrÃ©e un frame buffer
 
 FrameBuffer::FrameBuffer()
 {
@@ -16,14 +16,14 @@ FrameBuffer::FrameBuffer()
 	height = Window::size.y;
 }
 
-// Crée un frame buffer à partir d'un autre
+// CrÃ©e un frame buffer Ã  partir d'un autre
 
 FrameBuffer::FrameBuffer(const FrameBuffer& other)
 {
 	*this = other;
 }
 
-// Crée un frame buffer à partir de sa résolution
+// CrÃ©e un frame buffer Ã  partir de sa rÃ©solution
 
 FrameBuffer::FrameBuffer(uint16_t width, uint16_t height)
 {
@@ -33,7 +33,7 @@ FrameBuffer::FrameBuffer(uint16_t width, uint16_t height)
 	create(this->width, this->height);
 }
 
-// Opérateur égal (attention ce n'est pas une vraie copie, à utiliser pour déplacer un frame buffer mais pas pour en créer un nouveau)
+// OpÃ©rateur Ã©gal (attention ce n'est pas une vraie copie, Ã  utiliser pour dÃ©placer un frame buffer mais pas pour en crÃ©er un nouveau)
 
 FrameBuffer& FrameBuffer::operator=(const FrameBuffer& other)
 {
@@ -52,7 +52,7 @@ FrameBuffer& FrameBuffer::operator=(const FrameBuffer& other)
 	return *this;
 }
 
-// Détruit le frame buffer
+// DÃ©truit le frame buffer
 
 FrameBuffer::~FrameBuffer()
 {
@@ -63,7 +63,7 @@ FrameBuffer::~FrameBuffer()
 	}
 }
 
-// Initialise le frame buffer à partir de sa taille
+// Initialise le frame buffer Ã  partir de sa taille
 
 void FrameBuffer::create(uint16_t width, uint16_t height)
 {
@@ -140,7 +140,7 @@ void FrameBuffer::clear()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 }
 
-// Crée les frame buffers utilisés dans le programme
+// CrÃ©e les frame buffers utilisÃ©s dans le programme
 
 void FrameBuffer::init()
 {

@@ -7,7 +7,7 @@
 #include "Fox.h"
 #include "Wolf.h"
 
-// Crée le monde
+// CrÃ©e le monde
 
 World::World()
 {
@@ -17,14 +17,14 @@ World::World()
 	seed = 0;
 }
 
-// Crée le monde à partir d'un autre
+// CrÃ©e le monde Ã  partir d'un autre
 
 World::World(const World& other)
 {
 	*this = other;
 }
 
-// Détruit le monde
+// DÃ©truit le monde
 
 World::~World()
 {
@@ -35,7 +35,7 @@ World::~World()
 		delete mob;
 }
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 World& World::operator=(const World& other)
 {
@@ -47,7 +47,7 @@ World& World::operator=(const World& other)
 	return *this;
 }
 
-// Trouve le bloc à une position donnée
+// Trouve le bloc Ã  une position donnÃ©e
 
 Block& World::operator[](const glm::ivec3& block_pos) const
 {
@@ -62,7 +62,7 @@ Block& World::operator[](const glm::ivec3& block_pos) const
 	if (chunk == NULL)
 		return Block::air;
 
-	// Demande le bloc au chunk trouvé
+	// Demande le bloc au chunk trouvÃ©
 	return (*chunk)[block_pos];
 }
 
@@ -70,36 +70,36 @@ Block& World::operator[](const glm::ivec3& block_pos) const
 
 void World::add_chunk(const glm::ivec3& chunk_pos)
 {
-	// Crée et ajoute le chunk
+	// CrÃ©e et ajoute le chunk
 	lock.lock();
 	chunks.push_back(new Chunk(chunk_pos, this));
 	lock.unlock();
 
-	// Supprime le futur chunk à cet emplacement
+	// Supprime le futur chunk Ã  cet emplacement
 
 	auto it = std::find(future_chunks_pos.begin(), future_chunks_pos.end(), chunk_pos);
 
 	if (it != future_chunks_pos.end())
 		future_chunks_pos.erase(it);
 
-	// Met à jour le monde pour chaque chunk autour
+	// Met Ã  jour le monde pour chaque chunk autour
 
 	for (uint8_t i = 0; i < around_positions.size(); i++)
 	{
 		glm::ivec3 pos = chunks.back()->position + (around_positions[i] * (int)Chunk::size);
 		Chunk* chunk = find_chunk(pos);
 
-		// Ajoute des futures chunks autour du chunk créé
+		// Ajoute des futures chunks autour du chunk crÃ©Ã©
 		if (chunk == NULL && std::count(future_chunks_pos.begin(), future_chunks_pos.end(), pos) == 0)
 			future_chunks_pos.push_back(pos);
 
 		if (chunk != NULL)
 		{
-			// Met à jours les pointeurs vers les chunks autours du chunk et des chunks autours
+			// Met Ã  jours les pointeurs vers les chunks autours du chunk et des chunks autours
 			chunks.back()->chunks_around.push_back(chunk);
 			chunk->chunks_around.push_back(chunks.back());
 			
-			// Met à jour ses limites de hauteur et celles des chunks autours
+			// Met Ã  jour ses limites de hauteur et celles des chunks autours
 
 			if (chunks.back()->layer_min > chunk->local_layer_min)
 				chunks.back()->layer_min = chunk->local_layer_min;
@@ -115,16 +115,16 @@ void World::add_chunk(const glm::ivec3& chunk_pos)
 		}
 	}
 
-	// Met à jour le chunk	
+	// Met Ã  jour le chunk	
 	chunks.back()->update_all();
 
-	// Met à jour les bords des chunks autours
+	// Met Ã  jour les bords des chunks autours
 	for (auto chunk_around : chunks.back()->chunks_around)
 		if (chunk_around != NULL)
 			chunk_around->update_edges();
 }
 
-// Décharge un chunk
+// DÃ©charge un chunk
 
 void World::remove_chunk(Chunk* chunk)
 {
@@ -143,7 +143,7 @@ void World::remove_chunk(Chunk* chunk)
 			future_chunks_pos.erase(future_chunk_pos);
 	}
 
-	// Supprime les pointeurs vers le chunk supprimé
+	// Supprime les pointeurs vers le chunk supprimÃ©
 
 	for (auto c : chunks_around)
 		if (c != NULL)
@@ -155,20 +155,20 @@ void World::remove_chunk(Chunk* chunk)
 					c->chunks_around.remove(chunk_around);
 		}
 
-	// Enlève le chunk et rajoute un future chunk à la place
+	// EnlÃ¨ve le chunk et rajoute un future chunk Ã  la place
 	future_chunks_pos.push_back(chunk_pos);
 	chunks.remove(chunk);
 	delete chunk;
 
 	lock.unlock();
 
-	// Met à jour les bords des chunks autour
+	// Met Ã  jour les bords des chunks autour
 	for (auto chunk_around : chunks_around)
 		if (chunk_around != NULL)
 			chunk_around->update_edges();
 }
 
-// Donne les coordonnées du chunk où se trouve le bloc
+// Donne les coordonnÃ©es du chunk oÃ¹ se trouve le bloc
 
 glm::ivec3 World::block_to_chunk(const glm::ivec3& block_pos) const
 {
@@ -199,7 +199,7 @@ glm::ivec3 World::block_to_chunk(const glm::ivec3& block_pos) const
 	return result;
 }
 
-// Trouve le chunk à la position donnée
+// Trouve le chunk Ã  la position donnÃ©e
 
 Chunk* World::find_chunk(const glm::ivec3& chunk_pos) const
 {
@@ -236,14 +236,14 @@ float World::get_distance(const glm::vec3& player_pos, const glm::ivec3& chunk_p
 	return sqrt(pow(player_pos.x - chunk_pos.x, 2) + pow(player_pos.z - chunk_pos.z, 2));
 }
 
-// Donne le bloc fixé par le joueur
+// Donne le bloc fixÃ© par le joueur
 
 Block* World::get_selected_block(const Player& player)
 {
 	return NULL;
 }
 
-// Ajoute un chunk à l'emplacement du joueur
+// Ajoute un chunk Ã  l'emplacement du joueur
 
 void World::init(const int64_t& seed)
 {
@@ -264,13 +264,13 @@ void World::init(const int64_t& seed)
 	add_chunk(glm::ivec3(0, 0, 0));
 }
 
-// Génère les chunks autour des chunks chargés
+// GÃ©nÃ¨re les chunks autour des chunks chargÃ©s
 
 void World::generate(const glm::vec3& player_pos)
 {
 	bool finish = false;
 
-	// Décharge les chunks trop éloignés du joueur
+	// DÃ©charge les chunks trop Ã©loignÃ©s du joueur
 
 	for (auto& chunk : chunks)
 		if (chunk != NULL && get_distance(player_pos, chunk->position) > Chunk::max_distance * 1.3f)
@@ -294,7 +294,7 @@ void World::generate(const glm::vec3& player_pos)
 	generate_meshes();
 }
 
-// Génère les vertices OpenGL
+// GÃ©nÃ¨re les vertices OpenGL
 
 void World::generate_meshes()
 {
@@ -312,7 +312,7 @@ void World::send_meshes()
 			chunk->send_mesh();
 }
 
-// Donne la position où apparait le joueur
+// Donne la position oÃ¹ apparait le joueur
 
 glm::vec3 World::get_spawn_position() const
 {
@@ -322,7 +322,7 @@ glm::vec3 World::get_spawn_position() const
 	return glm::vec3(chunks.front()->position.x + Chunk::size / 2.f, chunks.front()->local_layer_max + 1, chunks.front()->position.z + Chunk::size / 2.f);
 }
 
-// Gère les mobs du monde
+// GÃ¨re les mobs du monde
 
 void World::update_mobs(const glm::vec3& player_pos)
 {
@@ -349,7 +349,7 @@ void World::update_mobs(const glm::vec3& player_pos)
 		}
 	}
 
-	// Mise à jour des mobs
+	// Mise Ã  jour des mobs
 	
 	for (auto& mob : mobs)
 		mob->update(*this, player_pos);
@@ -451,7 +451,7 @@ void World::draw_mobs(const Camera& camera, const std::vector<const Light*>& lig
 		mob->draw(camera, lights, clipping_plane);
 }
 
-// Affiche les élements de debug
+// Affiche les Ã©lements de debug
 
 void World::draw_debug(const Camera& camera) const
 {

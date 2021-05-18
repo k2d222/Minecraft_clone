@@ -7,7 +7,7 @@
 #include "Camera.h"
 #include "VertexBuffer.h"
 
-// Classe définissant le ciel
+// Classe dÃ©finissant le ciel
 
 class Sky
 {
@@ -15,11 +15,11 @@ private:
 
 	Color					high_color;			// Couleur du haut du ciel
 	Color					low_color;			// Couleur du bas du ciel
-	Light					light;				// Lumière ambiente du ciel
+	Light					light;				// LumiÃ¨re ambiente du ciel
 	glm::mat4				model;				// Matrice de transformation
 	VertexBuffer			object;				// Vertex buffer OpenGL
 
-	static glm::mat4		scale_matrix;		// Matrice d'échelle
+	static glm::mat4		scale_matrix;		// Matrice d'Ã©chelle
 
 public:
 

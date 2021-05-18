@@ -9,7 +9,7 @@
 #include "VertexBuffer.h"
 #include "Texture.h"
 
-// Classe définissant une entité
+// Classe dÃ©finissant une entitÃ©
 
 class Entity
 {
@@ -19,7 +19,7 @@ public:
 	static constexpr float		walk_speed		= 4.5f;	// Vitesse en marchant
 	static constexpr float		texture_size	= 64.f;	// Taille de la texture du skin
 
-	// Classe définissant une partie du model
+	// Classe dÃ©finissant une partie du model
 
 	class Part
 	{
@@ -31,7 +31,7 @@ public:
 
 		glm::mat4					propagated_matrix;	// Matrice de propagation
 		glm::mat4					local_matrix;		// Matrice locale
-		std::vector<Part*>			children;			// Parties reliées
+		std::vector<Part*>			children;			// Parties reliÃ©es
 
 									Part();
 									Part(const Part& other);
@@ -46,22 +46,22 @@ public:
 
 protected:
 
-	float						y_offset;				// Décallage en y de la hitbox par rapport au corps
+	float						y_offset;				// DÃ©callage en y de la hitbox par rapport au corps
 	Part						body;					// Corps
 	Part						neck;					// Cou
-	std::array<glm::vec3, 12>	hitbox;					// Hitbox de l'entité
-	glm::vec3					previous_pos;			// Position précédente
-	glm::vec3					position;				// Position de l'entité
-	glm::vec3					speed;					// Vitesse de l'entité
+	std::array<glm::vec3, 12>	hitbox;					// Hitbox de l'entitÃ©
+	glm::vec3					previous_pos;			// Position prÃ©cÃ©dente
+	glm::vec3					position;				// Position de l'entitÃ©
+	glm::vec3					speed;					// Vitesse de l'entitÃ©
 	bool						in_air;					// Est en l'air
-	Chunk*						chunk;					// Le chunk dans lequel se trouve l'entité
+	Chunk*						chunk;					// Le chunk dans lequel se trouve l'entitÃ©
 	Texture*					texture;				// Texture
-	bool						is_blocked;				// Est entré en collision
+	bool						is_blocked;				// Est entrÃ© en collision
 	bool						walking;				// Est en train de marcher
 	glm::mat4					body_initial;			// Matrice initiale du corps
 	glm::mat4					neck_initial;			// Matrice initiale du cou
 	float						body_angle;				// Angle du corps
-	float						head_angle;				// Angle de la tête
+	float						head_angle;				// Angle de la tÃªte
 
 public:
 

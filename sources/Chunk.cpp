@@ -14,7 +14,7 @@ VertexBuffer Chunk::limits;
 /*
 std::vector<Chunk::LeavesToAdd>	Chunk::leaves_to_add = {};
 
-// Crée une liste de feuilles à ajouter
+// CrÃ©e une liste de feuilles Ã  ajouter
 
 Chunk::LeavesToAdd::LeavesToAdd()
 {
@@ -22,7 +22,7 @@ Chunk::LeavesToAdd::LeavesToAdd()
 	leaves.clear();
 }
 
-// Crée une liste de feuilles à ajouter à partir de la position du chunk
+// CrÃ©e une liste de feuilles Ã  ajouter Ã  partir de la position du chunk
 
 Chunk::LeavesToAdd::LeavesToAdd(const glm::ivec3& chunk_position)
 {
@@ -30,14 +30,14 @@ Chunk::LeavesToAdd::LeavesToAdd(const glm::ivec3& chunk_position)
 	leaves.clear();
 }
 
-// Crée une liste de feuilles à ajouter à partir d'une autre
+// CrÃ©e une liste de feuilles Ã  ajouter Ã  partir d'une autre
 
 Chunk::LeavesToAdd::LeavesToAdd(const LeavesToAdd& other)
 {
 	*this = other;
 }
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 Chunk::LeavesToAdd& Chunk::LeavesToAdd::operator=(const LeavesToAdd& other)
 {
@@ -48,7 +48,7 @@ Chunk::LeavesToAdd& Chunk::LeavesToAdd::operator=(const LeavesToAdd& other)
 }
 */
 
-// Crée un chunk
+// CrÃ©e un chunk
 
 Chunk::Chunk()
 {
@@ -64,14 +64,14 @@ Chunk::Chunk()
 	as_water = false;
 }
 
-// Crée un chunk à partir d'un autre
+// CrÃ©e un chunk Ã  partir d'un autre
 
 Chunk::Chunk(const Chunk& other)
 {
 	*this = other;
 }
 
-// Crée un chunk à partir de sa position
+// CrÃ©e un chunk Ã  partir de sa position
 
 Chunk::Chunk(const glm::ivec3& position, World* world)
 {
@@ -96,7 +96,7 @@ Chunk::Chunk(const glm::ivec3& position, World* world)
 	generate_blocks();
 }
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 Chunk& Chunk::operator=(const Chunk& other)
 {
@@ -117,7 +117,7 @@ Chunk& Chunk::operator=(const Chunk& other)
 	return *this;
 }
 
-// Donne le bloc du chunk à une position donnée
+// Donne le bloc du chunk Ã  une position donnÃ©e
 
 Block& Chunk::operator[](const glm::ivec3& block_pos)
 {
@@ -135,14 +135,14 @@ Block& Chunk::operator[](const glm::ivec3& block_pos)
 	return *block;
 }
 
-// Donne la valeur du bruit de Perlin en fonction de ces paramètres
+// Donne la valeur du bruit de Perlin en fonction de ces paramÃ¨tres
 
 float Chunk::noise(int8_t x, int8_t z, float size, float height, float shift)
 {
 	return glm::simplex(glm::vec2(float(world->seed + shift + position.x + x) / size, float(world->seed + shift + position.z + z) / size)) * height;
 }
 
-// Génération du paysage en utilisant le bruit de Perlin
+// GÃ©nÃ©ration du paysage en utilisant le bruit de Perlin
 
 void Chunk::generate_blocks()
 {
@@ -167,7 +167,7 @@ void Chunk::generate_blocks()
 
 			float mountains_noise = mountains_mask * (big_mountains + medium_mountains + small_mountains);
 
-			// Détails
+			// DÃ©tails
 
 			float beaches_details_strength = std::max(smooth_clamp(1.f / abs((average_stone_height + seabeds_noise + above_stone_height) - water_level), -1.f, 1.f, 2.f), 0.f);
 			float mountains_details_strength = std::max(smooth_clamp(average_stone_height + seabeds_noise + mountains_noise - water_level - 10.f, -1.f, 1.f, 10.f), 0.f);
@@ -179,7 +179,7 @@ void Chunk::generate_blocks()
 
 			float details_noise = (0.5f + details_strength + mountains_details_strength * 5.f) * (big_details + medium_details + small_details);
 
-			// Forêts
+			// ForÃªts
 
 			float forest_noise = (noise(x, z, 500.f, 1.f, 2000.f) + noise(x, z, 150.f, 1.f, 2000.f)) / 40.f;
 
@@ -269,11 +269,11 @@ void Chunk::generate_blocks()
 	layer_max = local_layer_max;
 }
 
-// Ajoute un arbre à l'emplacement donné
+// Ajoute un arbre Ã  l'emplacement donnÃ©
 
 bool Chunk::add_tree(int8_t x, uint8_t y, int8_t z)
 {
-	// Empêche qu'il soit en bord de chunk ou à côté d'un autre
+	// EmpÃªche qu'il soit en bord de chunk ou Ã  cÃ´tÃ© d'un autre
 
 	if (x <= 2 || x >= size - 3 || z <= 2 || z >= size - 3 || y >= height - tree_height - 1)
 		return false;
@@ -312,7 +312,7 @@ bool Chunk::add_tree(int8_t x, uint8_t y, int8_t z)
 	return true;
 }
 
-// Ajoute un bloc de feuilles d'arbre à un endroit donné
+// Ajoute un bloc de feuilles d'arbre Ã  un endroit donnÃ©
 
 void Chunk::add_leave(int8_t x, uint8_t y, int8_t z, bool update_block)
 {
@@ -346,7 +346,7 @@ void Chunk::add_leave(int8_t x, uint8_t y, int8_t z, bool update_block)
 	}*/
 }
 
-// Ajoute une plente à un endroit donné
+// Ajoute une plente Ã  un endroit donnÃ©
 
 void Chunk::add_plant(int8_t x, uint8_t y, int8_t z)
 {
@@ -369,7 +369,7 @@ void Chunk::add_plant(int8_t x, uint8_t y, int8_t z)
 		blocks[x][y][z].set_type(Block::Type::Weed, false);
 }
 
-// Cherche le bloc à une position donnée
+// Cherche le bloc Ã  une position donnÃ©e
 
 Block* Chunk::find_block(const glm::ivec3& block_pos)
 {
@@ -381,7 +381,7 @@ Block* Chunk::find_block(const glm::ivec3& block_pos)
 	return NULL;
 }
 
-// Met à jour tous les blocs du chunk et autour
+// Met Ã  jour tous les blocs du chunk et autour
 
 void Chunk::update_all()
 {
@@ -392,7 +392,7 @@ void Chunk::update_all()
 			for (uint8_t z = 1; z < size - 1; z++)
 				blocks[x][y][z].update(false);
 
-	// Côtés
+	// CÃ´tÃ©s
 
 	for (auto& rectangle : blocks)
 		for (uint8_t y = layer_min; y < layer_max; y++)
@@ -409,7 +409,7 @@ void Chunk::update_all()
 		}
 }
 
-// Met à jour les bords du chunk
+// Met Ã  jour les bords du chunk
 
 void Chunk::update_edges()
 {
@@ -428,7 +428,7 @@ void Chunk::update_edges()
 		}
 }
 
-// Met à jour un bord du chunk
+// Met Ã  jour un bord du chunk
 
 void Chunk::update_face(uint8_t face_id)
 {
@@ -453,7 +453,7 @@ void Chunk::update_face(uint8_t face_id)
 				rectangle[y].back().update_face(1);
 }
 
-// Génère les vertices OpenGL
+// GÃ©nÃ¨re les vertices OpenGL
 
 void Chunk::generate_mesh()
 {

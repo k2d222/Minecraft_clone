@@ -7,7 +7,7 @@ const glm::mat4	Luminary::scale_matrix			= glm::scale(glm::mat4(1.f), glm::vec3(
 const glm::mat4	Luminary::translation_matrix	= glm::translate(glm::mat4(1.f), glm::vec3(0.f, 0.f, -distance));
 const glm::mat4	Luminary::rotation_matrix		= glm::rotate(glm::mat4(1.f), angle, glm::vec3(0.f, 1.f, 0.f));
 
-// Crée un astre
+// CrÃ©e un astre
 
 Luminary::Luminary()
 {
@@ -15,14 +15,14 @@ Luminary::Luminary()
 	model = glm::mat4(1.f);
 }
 
-// Crée un astre à partir d'un autre
+// CrÃ©e un astre Ã  partir d'un autre
 
 Luminary::Luminary(const Luminary& other)
 {
 	*this = other;
 }
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 Luminary& Luminary::operator=(const Luminary& other)
 {
@@ -79,7 +79,7 @@ glm::vec3 Luminary::get_position() const
 	return model * glm::vec3(0.f, 0.f, 0.f);
 }
 
-// Donne un pointeur vers la lumière de l'astre
+// Donne un pointeur vers la lumiÃ¨re de l'astre
 
 const Light* Luminary::get_light() const
 {

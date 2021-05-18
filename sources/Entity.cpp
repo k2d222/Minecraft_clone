@@ -4,7 +4,7 @@
 #include "Game.h"
 #include "Texture.h"
 
-// Crée une partie du corps
+// CrÃ©e une partie du corps
 
 Entity::Part::Part()
 {
@@ -13,14 +13,14 @@ Entity::Part::Part()
 	children.clear();
 }
 
-// Crée une partie du corps à partir d'une autre
+// CrÃ©e une partie du corps Ã  partir d'une autre
 
 Entity::Part::Part(const Part& other)
 {
 	*this = other;
 }
 
-// Crée une partie du corps à partir de ces paramètres
+// CrÃ©e une partie du corps Ã  partir de ces paramÃ¨tres
 
 Entity::Part::Part(Mesh mesh, const glm::vec2& texture_pos, const glm::vec3& size, const std::vector<Part*>& children, bool horizontal)
 {
@@ -31,7 +31,7 @@ Entity::Part::Part(Mesh mesh, const glm::vec2& texture_pos, const glm::vec3& siz
 	this->children = children;
 }
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 Entity::Part& Entity::Part::operator=(const Part& other)
 {
@@ -100,7 +100,7 @@ void Entity::Part::draw(const Camera& camera, const std::vector<const Light*>& l
 	Game::matrices.pop();
 }
 
-// Donne les coordonnées de textures à partir de la position et de la taille sur l'image
+// Donne les coordonnÃ©es de textures Ã  partir de la position et de la taille sur l'image
 
 std::vector<float> Entity::Part::init_texcoords(const glm::vec2& texture_pos, const glm::vec3& size, bool horizontal)
 {
@@ -156,7 +156,7 @@ std::vector<float> Entity::Part::init_texcoords(const glm::vec2& texture_pos, co
 	return texcoords;
 }
 
-// Crée une entité
+// CrÃ©e une entitÃ©
 
 Entity::Entity()
 {
@@ -187,7 +187,7 @@ Entity::Entity()
 	body.children = { &neck };
 }
 
-// Crée une entité à partir d'une autre
+// CrÃ©e une entitÃ© Ã  partir d'une autre
 
 Entity::Entity(const Entity& other)
 {
@@ -199,7 +199,7 @@ Entity::Entity(const Entity& other)
 Entity::~Entity()
 {}
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 Entity& Entity::operator=(const Entity& other)
 {
@@ -225,7 +225,7 @@ Entity& Entity::operator=(const Entity& other)
 	return *this;
 }
 
-// Déplacements
+// DÃ©placements
 
 void Entity::move(const glm::vec3& position)
 {
@@ -234,7 +234,7 @@ void Entity::move(const glm::vec3& position)
 	body.propagated_matrix = glm::translate(glm::mat4(1.f), position + glm::vec3(0.f, y_offset, 0.f));
 }
 
-// Tourne l'entité
+// Tourne l'entitÃ©
 
 void Entity::rotate(float angle)
 {
@@ -264,7 +264,7 @@ void Entity::jump()
 	in_air = true;
 }
 
-// Met à jour la position
+// Met Ã  jour la position
 
 void Entity::update_position()
 {
@@ -280,14 +280,14 @@ void Entity::update_position()
 	position += speed * frame_duration;
 }
 
-// Met à jour la rotation
+// Met Ã  jour la rotation
 
 void Entity::update_rotation()
 {
 	rotate(body_angle);
 }
 
-// Met à jour le chunk dans lequel se trouve l'entité
+// Met Ã  jour le chunk dans lequel se trouve l'entitÃ©
 
 void Entity::find_entity_chunk(const World& world)
 {
@@ -369,7 +369,7 @@ void Entity::check_hitbox(const World& world)
 	position = pos_temp;
 }
 
-// Met à jour l'entité
+// Met Ã  jour l'entitÃ©
 
 void Entity::update(const World& world, const glm::vec3& player_pos)
 {
@@ -382,7 +382,7 @@ void Entity::update(const World& world, const glm::vec3& player_pos)
 	update_rotation();
 }
 
-// Affiche l'entité
+// Affiche l'entitÃ©
 
 void Entity::draw(const Camera& camera, const std::vector<const Light*>& lights, const Plane& clipping_plane) const
 {

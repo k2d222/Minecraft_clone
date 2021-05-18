@@ -17,9 +17,9 @@
 #include "Shader.h"
 #include "FrameBuffer.h"
 
-constexpr float reflection_quality = 0.5f;	// Qualité des reflets (de 0 à 1)
+constexpr float reflection_quality = 0.5f;	// QualitÃ© des reflets (de 0 Ã  1)
 
-// Classe définissant le jeu
+// Classe dÃ©finissant le jeu
 
 class Game
 {
@@ -31,13 +31,13 @@ public:
 	static Sky						sky;			// Le ciel
 	static std::stack<glm::mat4>	matrices;		// La pile de matrices
 	static Player					player;			// Le joueur
-	static Camera					fixed_cam;		// Caméra fixée par le joueur
-	static bool						fix_cam;		// La caméra est fixée
-	static bool						fake_cam;		// Une caméra virtuelle est utilisée
-	static bool						in_water;		// La caméra est sous l'eau
-	static bool						stop_moving;	// Arrête de bouger la caméra
-	static bool						debug;			// Affiche les élements de debug
-	static float					time;			// Temps écoulé
+	static Camera					fixed_cam;		// CamÃ©ra fixÃ©e par le joueur
+	static bool						fix_cam;		// La camÃ©ra est fixÃ©e
+	static bool						fake_cam;		// Une camÃ©ra virtuelle est utilisÃ©e
+	static bool						in_water;		// La camÃ©ra est sous l'eau
+	static bool						stop_moving;	// ArrÃªte de bouger la camÃ©ra
+	static bool						debug;			// Affiche les Ã©lements de debug
+	static float					time;			// Temps Ã©coulÃ©
 
 	static void						init();
 	static void						checks_events(const SDL_Event& my_event);

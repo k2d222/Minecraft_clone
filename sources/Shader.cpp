@@ -24,7 +24,7 @@ int Shader::loadShader(const std::string& code, int type)
 
 	if (compiled == GL_FALSE)
 	{
-		char* error = (char*)malloc(ERROR_MAX_LENGTH * sizeof(char)); // Ca leak ça :(
+		char* error = (char*)malloc(ERROR_MAX_LENGTH * sizeof(char)); // Ca leak Ã§a :(
 		int length = 0;
 		glGetShaderInfoLog(shader, ERROR_MAX_LENGTH, &length, error);
 
@@ -72,7 +72,7 @@ bool Shader::loadFromFiles(FILE* vertexFile, FILE* fragFile)
 	return result;
 }
 
-// Mystère...
+// MystÃ¨re...
 
 bool Shader::loadFromStrings(const std::string& vertexString, const std::string& fragString)
 {
@@ -103,7 +103,7 @@ bool Shader::loadFromStrings(const std::string& vertexString, const std::string&
 	return true;
 }
 
-// Crée un shader
+// CrÃ©e un shader
 
 Shader::Shader()
 {
@@ -112,21 +112,21 @@ Shader::Shader()
 	frag_id = std::make_shared<GLuint>(0);
 }
 
-// Crée un shader à partir d'un autre
+// CrÃ©e un shader Ã  partir d'un autre
 
 Shader::Shader(const Shader& other)
 {
 	*this = other;
 }
 
-// Crée un shader à partir de fichiers
+// CrÃ©e un shader Ã  partir de fichiers
 
 Shader::Shader(const std::string& vert_path, const std::string& frag_path)
 {
 	load(vert_path, frag_path);
 }
 
-// Détruit le shader
+// DÃ©truit le shader
 
 Shader::~Shader()
 {
@@ -138,7 +138,7 @@ Shader::~Shader()
 	}
 }
 
-// Opérateur égal (attention ce n'est pas une vraie copie, à utiliser pour déplacer un shader mais pas pour en créer un nouveau)
+// OpÃ©rateur Ã©gal (attention ce n'est pas une vraie copie, Ã  utiliser pour dÃ©placer un shader mais pas pour en crÃ©er un nouveau)
 
 Shader& Shader::operator=(const Shader& other)
 {
@@ -156,7 +156,7 @@ Shader& Shader::operator=(const Shader& other)
 	return *this;
 }
 
-// Ouvre et compile un shader à partir de fichiers
+// Ouvre et compile un shader Ã  partir de fichiers
 
 bool Shader::load(const std::string& vert_path, const std::string& frag_path)
 {
@@ -203,7 +203,7 @@ void Shader::unbind()
 	glUseProgram(0);
 }
 
-// Ouvre les shaders utilisés dans le programme
+// Ouvre les shaders utilisÃ©s dans le programme
 
 void Shader::init()
 {

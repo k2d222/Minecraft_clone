@@ -7,18 +7,18 @@
 #include "VertexBuffer.h"
 #include "Camera.h"
 
-// Classe définissant un astre
+// Classe dÃ©finissant un astre
 
 class Luminary
 {
 protected:
 
 	Texture*				texture;				// Texture de l'astre
-	Light					light;					// Lumière de l'astre
+	Light					light;					// LumiÃ¨re de l'astre
 	glm::mat4				model;					// Matrice de transformation
 	VertexBuffer			object;					// Vertex buffer OpenGL
 
-	static const glm::mat4	scale_matrix;			// Matrice d'échelle
+	static const glm::mat4	scale_matrix;			// Matrice d'Ã©chelle
 	static const glm::mat4	translation_matrix;		// Matrice de translation
 	static const glm::mat4	rotation_matrix;		// Matrice de rotation
 
@@ -28,7 +28,7 @@ public:
 	static constexpr float	speed		= 0.01f;	// Vitesse des astres
 	static constexpr float	size		= 30.f;		// Taille des astres
 	static constexpr float	distance	= 500.f;	// Distance des astres
-	static constexpr float	start_time	= pi / 4.f;	// Temps de départ des astres
+	static constexpr float	start_time	= pi / 4.f;	// Temps de dÃ©part des astres
 
 							Luminary();
 							Luminary(const Luminary& other);

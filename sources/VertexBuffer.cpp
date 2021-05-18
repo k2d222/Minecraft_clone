@@ -1,6 +1,6 @@
 #include "VertexBuffer.h"
 
-// Crée un vertex buffer
+// CrÃ©e un vertex buffer
 
 VertexBuffer::VertexBuffer()
 {
@@ -10,14 +10,14 @@ VertexBuffer::VertexBuffer()
 	nb_vertices = 0;
 }
 
-// Crée un vertex buffer à partir d'un autre
+// CrÃ©e un vertex buffer Ã  partir d'un autre
 
 VertexBuffer::VertexBuffer(const VertexBuffer& other)
 {
 	*this = other;
 }
 
-// Crée un vertex buffer en donnant son shader
+// CrÃ©e un vertex buffer en donnant son shader
 
 VertexBuffer::VertexBuffer(Shader& shader)
 {
@@ -28,14 +28,14 @@ VertexBuffer::VertexBuffer(Shader& shader)
 	set_shader(shader);
 }
 
-// Crée un vertex buffer et envoie les données au shader
+// CrÃ©e un vertex buffer et envoie les donnÃ©es au shader
 
 VertexBuffer::VertexBuffer(Shader& shader, const Mesh& mesh, DataType data_sent)
 {
 	send_data(shader, mesh, data_sent);
 }
 
-// Détruit le vertex buffer
+// DÃ©truit le vertex buffer
 
 VertexBuffer::~VertexBuffer()
 {
@@ -46,7 +46,7 @@ VertexBuffer::~VertexBuffer()
 	}
 }
 
-// Opérateur égal (attention ce n'est pas une vraie copie, à utiliser pour déplacer un vertex buffer mais pas pour en créer un nouveau)
+// OpÃ©rateur Ã©gal (attention ce n'est pas une vraie copie, Ã  utiliser pour dÃ©placer un vertex buffer mais pas pour en crÃ©er un nouveau)
 
 VertexBuffer& VertexBuffer::operator=(const VertexBuffer& other)
 {
@@ -71,7 +71,7 @@ void VertexBuffer::set_shader(Shader& shader)
 	this->shader = &shader;
 }
 
-// Envoie les données au shader
+// Envoie les donnÃ©es au shader
 
 void VertexBuffer::send_data(Shader& shader, const Mesh& mesh, DataType data_sent)
 {
@@ -80,7 +80,7 @@ void VertexBuffer::send_data(Shader& shader, const Mesh& mesh, DataType data_sen
 	send_data(mesh, data_sent);
 }
 
-// Envoie les données au shader
+// Envoie les donnÃ©es au shader
 
 void VertexBuffer::send_data(const Mesh& mesh, DataType data_sent)
 {
@@ -104,7 +104,7 @@ void VertexBuffer::send_data(const Mesh& mesh, DataType data_sent)
 
 	if (nb_vertices)
 	{
-		// Génère le vertex buffer OpenGL
+		// GÃ©nÃ¨re le vertex buffer OpenGL
 
 		glGenBuffers(1, &(*vbo));
 		glBindBuffer(GL_ARRAY_BUFFER, *vbo);
@@ -124,7 +124,7 @@ void VertexBuffer::send_data(const Mesh& mesh, DataType data_sent)
 		}
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-		// Génère le vertex array OpenGL
+		// GÃ©nÃ¨re le vertex array OpenGL
 
 		glGenVertexArrays(1, &(*vao));
 		glBindVertexArray(*vao);
@@ -327,7 +327,7 @@ void VertexBuffer::draw(DrawType draw_type) const
 		glDrawArrays((GLenum)draw_type, 0, nb_vertices);
 }
 
-// Vérifie si le vertex buffer est utilisable
+// VÃ©rifie si le vertex buffer est utilisable
 
 bool VertexBuffer::is_valid() const
 {
@@ -350,42 +350,42 @@ void VertexBuffer::unbind()
 	glBindVertexArray(0);
 }
 
-// Opérateur AND
+// OpÃ©rateur AND
 
 DataType operator&(DataType type_1, DataType type_2)
 {
 	return static_cast<DataType>(static_cast<uint8_t>(type_1) & static_cast<uint8_t>(type_2));
 }
 
-// Opérateur OR
+// OpÃ©rateur OR
 
 DataType operator|(DataType type_1, DataType type_2)
 {
 	return static_cast<DataType>(static_cast<uint8_t>(type_1) | static_cast<uint8_t>(type_2));
 }
 
-// Opérateur XOR
+// OpÃ©rateur XOR
 
 DataType operator^(DataType type_1, DataType type_2)
 {
 	return static_cast<DataType>(static_cast<uint8_t>(type_1) ^ static_cast<uint8_t>(type_2));
 }
 
-// Opérateur NOT
+// OpÃ©rateur NOT
 
 DataType operator~(DataType type)
 {
 	return static_cast<DataType>(~static_cast<uint8_t>(type));
 }
 
-// Opérateur de décalage vers la gauche
+// OpÃ©rateur de dÃ©calage vers la gauche
 
 DataType operator<<(DataType type, uint8_t shift)
 {
 	return static_cast<DataType>(static_cast<uint8_t>(type) << shift);
 }
 
-// Opérateur de décalage vers la droite
+// OpÃ©rateur de dÃ©calage vers la droite
 
 DataType operator>>(DataType type, uint8_t shift)
 {

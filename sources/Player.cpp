@@ -1,6 +1,6 @@
 #include "Player.h"
 
-// Crée un joueur
+// CrÃ©e un joueur
 
 Player::Player()
 {
@@ -14,14 +14,14 @@ Player::Player()
 	first_person = false;
 }
 
-// Crée un joueur à partir d'un autre
+// CrÃ©e un joueur Ã  partir d'un autre
 
 Player::Player(const Player& other)
 {
 	*this = other;
 }
 
-// Crée un joueur à partir de sa position
+// CrÃ©e un joueur Ã  partir de sa position
 
 Player::Player(const glm::vec3& position)
 {
@@ -52,7 +52,7 @@ Player::Player(const glm::vec3& position)
 	camera.set_position((skin.body.propagated_matrix * skin.neck.propagated_matrix * skin.head.propagated_matrix * skin.camera.propagated_matrix) * glm::vec3(0.f, 0.f, 0.f));
 }
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 Player& Player::operator=(const Player& other)
 {
@@ -77,14 +77,14 @@ glm::vec3 Player::get_position() const
 	return position;
 }
 
-// Changement de la direction de la caméra à partir des mouvements de la souris
+// Changement de la direction de la camÃ©ra Ã  partir des mouvements de la souris
 
 void Player::look(const glm::ivec2& mouse_pos)
 {
 	camera.look(mouse_pos);
 }
 
-// Changement de la direction de la tête à partir des mouvements de la souris
+// Changement de la direction de la tÃªte Ã  partir des mouvements de la souris
 
 void Player::update_head()
 {
@@ -92,7 +92,7 @@ void Player::update_head()
 	camera.set_position((skin.body.propagated_matrix * skin.neck.propagated_matrix * skin.head.propagated_matrix * skin.camera.propagated_matrix) * glm::vec3(0.f, 0.f, 0.f));
 }
 
-// Déplacements
+// DÃ©placements
 
 void Player::move(const Uint8* keystates, World& world)
 {
@@ -243,7 +243,7 @@ void Player::jump()
 	in_air = true;
 }
 
-// Met à jour la position
+// Met Ã  jour la position
 
 void Player::update_position()
 {
@@ -268,7 +268,7 @@ void Player::update_position()
 	position += speed * frame_duration;
 }
 
-// Met à jour le chunk dans lequel se trouve le joueur
+// Met Ã  jour le chunk dans lequel se trouve le joueur
 
 void Player::find_player_chunk(World& world)
 {

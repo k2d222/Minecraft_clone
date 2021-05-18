@@ -17,7 +17,7 @@ void Moon::init()
 	inverted = true;
 }
 
-// Met à jour la lune
+// Met Ã  jour la lune
 
 void Moon::update(const glm::vec3& player_pos)
 {

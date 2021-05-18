@@ -10,20 +10,20 @@ class World;
 typedef std::array<bool, Cube::nb_faces>	FacesShown;			// 0:Back, 1:Front, 2:Left, 3:Right, 4:Top, 5:Bottom
 typedef std::array<uint8_t, Cube::nb_faces>	FacesOrientation;	// 0:Back, 1:Front, 2:Left, 3:Right, 4:Top, 5:Bottom
 
-// Classe définissant un bloc
+// Classe dÃ©finissant un bloc
 
 class Block
 {
 public:
 
-	// Enum définissant les types de blocs
+	// Enum dÃ©finissant les types de blocs
 
 	enum class Type { Air, Grass, Dirt, Stone, Sand, Wood, Leaves, Snow, Weed, TallWeedBottom, TallWeebTop, Tulip, Orchid, Dandelion };
 
 private:
 
 	Chunk*					chunk;												// Pointeur vers le chunk du bloc
-	FacesShown				faces_shown;										// Les faces affichées
+	FacesShown				faces_shown;										// Les faces affichÃ©es
 
 	Type					type;												// Type du bloc
 	glm::ivec3				position;											// Position

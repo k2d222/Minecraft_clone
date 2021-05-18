@@ -1,6 +1,6 @@
 #include "Wolf.h"
 
-// Crée un loup
+// CrÃ©e un loup
 
 Wolf::Wolf() : Mob()
 {
@@ -10,14 +10,14 @@ Wolf::Wolf() : Mob()
 	hip_2_initial = glm::mat4(1.f);
 }
 
-// Crée un loup à partir d'un autre
+// CrÃ©e un loup Ã  partir d'un autre
 
 Wolf::Wolf(const Wolf& other)
 {
 	*this = other;
 }
 
-// Crée un loup à partir de ces paramètres
+// CrÃ©e un loup Ã  partir de ces paramÃ¨tres
 
 Wolf::Wolf(const glm::vec3& position) : Mob()
 {
@@ -91,7 +91,7 @@ Wolf::Wolf(const glm::vec3& position) : Mob()
 	move(this->position);
 }
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 Wolf& Wolf::operator=(const Wolf& other)
 {

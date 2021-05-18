@@ -4,7 +4,7 @@
 #include "utils.h"
 #include "Luminary.h"
 
-// Classe définissant la lune
+// Classe dÃ©finissant la lune
 
 class Moon : public Luminary
 {

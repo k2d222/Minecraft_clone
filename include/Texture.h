@@ -3,7 +3,7 @@
 
 #include "utils.h"
 
-// Classe définissant une texture
+// Classe dÃ©finissant une texture
 
 class Texture
 {
@@ -17,8 +17,8 @@ public:
 	static Texture			player;			// Texture du joueur
 	static Texture			sun;			// Texture du soleil
 	static Texture			moon;			// Texture de la lune
-	static Texture			water_dudv;		// Texture pour déformer les reflets sur l'eau
-	static Texture			water_normals;	// Texture représentant les normales de l'eau
+	static Texture			water_dudv;		// Texture pour dÃ©former les reflets sur l'eau
+	static Texture			water_normals;	// Texture reprÃ©sentant les normales de l'eau
 	static Texture			cursor;			// Curseur
 	static Texture          wolf;           // Texture du loup
 	static Texture          fox;            // Texture du renard

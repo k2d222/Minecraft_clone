@@ -1,6 +1,6 @@
 #include "Chicken.h"
 
-// Crée une poule
+// CrÃ©e une poule
 
 Chicken::Chicken() : Mob()
 {
@@ -11,14 +11,14 @@ Chicken::Chicken() : Mob()
 	hips_2_initial = glm::mat4(1.f);
 }
 
-// Crée une poule à partir d'une autre
+// CrÃ©e une poule Ã  partir d'une autre
 
 Chicken::Chicken(const Chicken& other)
 {
 	*this = other;
 }
 
-// Crée une poule à partir de sa position
+// CrÃ©e une poule Ã  partir de sa position
 
 Chicken::Chicken(const glm::vec3& position) : Mob()
 {
@@ -89,7 +89,7 @@ Chicken::Chicken(const glm::vec3& position) : Mob()
 	move(this->position);
 }
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 Chicken& Chicken::operator=(const Chicken& other)
 {

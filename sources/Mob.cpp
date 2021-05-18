@@ -1,7 +1,7 @@
 #include "Mob.h"
 #include "Game.h"
 
-// Crée un mob
+// CrÃ©e un mob
 
 Mob::Mob() : Entity()
 {
@@ -13,14 +13,14 @@ Mob::Mob() : Entity()
 	will_dispawn = false;
 }
 
-// Crée un model 3D du joueur à partir d'un autre
+// CrÃ©e un model 3D du joueur Ã  partir d'un autre
 
 Mob::Mob(const Mob& other)
 {
 	*this = other;
 }
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 Mob& Mob::operator=(const Mob& other)
 {
@@ -36,7 +36,7 @@ Mob& Mob::operator=(const Mob& other)
 	return *this;
 }
 
-// Gère le comportement du mob
+// GÃ¨re le comportement du mob
 
 void Mob::behaviour()
 {
@@ -89,7 +89,7 @@ void Mob::behaviour()
 	}
 }
 
-// Met à jour le mob
+// Met Ã  jour le mob
 
 void Mob::update(const World& world, const glm::vec3& player_pos)
 {
@@ -107,7 +107,7 @@ void Mob::update(const World& world, const glm::vec3& player_pos)
 	update_dispawn(player_pos);
 }
 
-// Fait dispawn l'entité si il faut
+// Fait dispawn l'entitÃ© si il faut
 
 void Mob::update_dispawn(const glm::vec3& player_pos)
 {

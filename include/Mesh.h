@@ -7,7 +7,7 @@ class Skin;
 class Block;
 class Entity;
 
-// Classe définissant une maillage
+// Classe dÃ©finissant une maillage
 
 class Mesh
 {
@@ -15,18 +15,18 @@ private:
 
 	std::vector<float>	positions;		// Positions
 	std::vector<float>	normals;		// Normales
-	std::vector<float>	texcoords;		// Coordonnées de texture
+	std::vector<float>	texcoords;		// CoordonnÃ©es de texture
 	
 public:
 
-	static const Mesh	circle_64;		// Cercle avec 64 côtés
-	static const Mesh	cone_64;		// Cône avec 64 latitudes
+	static const Mesh	circle_64;		// Cercle avec 64 cÃ´tÃ©s
+	static const Mesh	cone_64;		// CÃ´ne avec 64 latitudes
 	static const Mesh	cube;			// Cube
-	static const Mesh	empty_cube;		// Cube avec juste les arrêtes
+	static const Mesh	empty_cube;		// Cube avec juste les arrÃªtes
 	static const Mesh	cylinder_64;	// Cylinde avec 64 latitudes
 	static const Mesh	null;			// Vide
-	static const Mesh	sphere_64;		// Sphère avec 64 latitudes et 64 longitudes
-	static const Mesh	square;			// Carré
+	static const Mesh	sphere_64;		// SphÃ¨re avec 64 latitudes et 64 longitudes
+	static const Mesh	square;			// CarrÃ©
 	static const Mesh	screen;			// Ecran
 
 						Mesh();

@@ -3,7 +3,7 @@
 #include "Block.h"
 #include "Game.h"
 
-// Crée une partie du corps
+// CrÃ©e une partie du corps
 
 Skin::Part::Part()
 {
@@ -12,14 +12,14 @@ Skin::Part::Part()
 	children.clear();
 }
 
-// Crée une partie du corps à partir d'une autre
+// CrÃ©e une partie du corps Ã  partir d'une autre
 
 Skin::Part::Part(const Part& other)
 {
 	*this = other;
 }
 
-// Crée une partie du corps à partir de ces paramètres
+// CrÃ©e une partie du corps Ã  partir de ces paramÃ¨tres
 
 Skin::Part::Part(Mesh mesh, const glm::vec2& texture_pos, const glm::vec3& size, const std::vector<Part*>& children)
 {
@@ -30,7 +30,7 @@ Skin::Part::Part(Mesh mesh, const glm::vec2& texture_pos, const glm::vec3& size,
 	this->children = children;
 }
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 Skin::Part& Skin::Part::operator=(const Part& other)
 {
@@ -99,7 +99,7 @@ void Skin::Part::draw(const Camera& camera, const std::vector<const Light*>& lig
 	Game::matrices.pop();
 }
 
-// Donne les coordonnées de textures à partir de la position et de la taille sur l'image
+// Donne les coordonnÃ©es de textures Ã  partir de la position et de la taille sur l'image
 
 std::vector<float> Skin::Part::init_texcoords(const glm::vec2& texture_pos, const glm::vec3& size)
 {
@@ -133,7 +133,7 @@ std::vector<float> Skin::Part::init_texcoords(const glm::vec2& texture_pos, cons
 	return texcoords;
 }
 
-// Crée un model 3D du joueur
+// CrÃ©e un model 3D du joueur
 
 Skin::Skin()
 {
@@ -154,14 +154,14 @@ Skin::Skin()
 	head_angle = 0.f;
 }
 
-// Crée un model 3D du joueur à partir d'un autre
+// CrÃ©e un model 3D du joueur Ã  partir d'un autre
 
 Skin::Skin(const Skin& other)
 {
 	*this = other;
 }
 
-// Crée un model 3D du joueur à partir de ces paramètres
+// CrÃ©e un model 3D du joueur Ã  partir de ces paramÃ¨tres
 
 Skin::Skin(const glm::vec3& position, const glm::vec3& direction)
 {
@@ -232,7 +232,7 @@ Skin::Skin(const glm::vec3& position, const glm::vec3& direction)
 	head_angle = 0.f;
 }
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 Skin& Skin::operator=(const Skin& other)
 {
@@ -275,7 +275,7 @@ Skin& Skin::operator=(const Skin& other)
 	return *this;
 }
 
-// Déplace le model 3D
+// DÃ©place le model 3D
 
 void Skin::move(const glm::vec3& position)
 {
@@ -291,7 +291,7 @@ void Skin::rotate(float angle)
 	body.propagated_matrix = glm::rotate(body.propagated_matrix, body_angle, glm::vec3(0.f, 1.f, 0.f));
 }
 
-// Tourne la tête
+// Tourne la tÃªte
 
 void Skin::rotate_head(float yaw, float pitch)
 {
@@ -312,7 +312,7 @@ void Skin::rotate_head(float yaw, float pitch)
 	neck.propagated_matrix = glm::rotate(neck.propagated_matrix, glm::radians(pitch), glm::vec3(1.f, 0.f, 0.f));
 }
 
-// Met à jour l'animation de la marche (n'essayez pas de comprendre cette fonction)
+// Met Ã  jour l'animation de la marche (n'essayez pas de comprendre cette fonction)
 
 void Skin::update_walk()
 {
@@ -349,7 +349,7 @@ void Skin::update_walk()
 			body_angle += turn_speed;
 	}
 
-	// Je vous avais prévenu...
+	// Je vous avais prÃ©venu...
 
 	if ((forward && !left && right) || (back && left && !right))
 	{

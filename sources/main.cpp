@@ -53,7 +53,7 @@ int main(int argc, char* argv[])
 			}
 		}
 
-		// Mises à jour
+		// Mises Ã  jour
 		lock.lock();
 		Game::update(mouse_pos);
 		lock.unlock();

@@ -4,7 +4,7 @@ Material Material::block	= Material(Color(), 0.2f, 0.6f, 0.f, 1.f);
 Material Material::entity	= Material(Color(), 0.2f, 0.6f, 0.4f, 100.f);
 Material Material::water	= Material(Color(0.f, 0.2f, 0.8f, 1.f), 0.4f, 0.4f, 0.4f, 500.f);
 
-// Crée un matériaux
+// CrÃ©e un matÃ©riaux
 
 Material::Material()
 {
@@ -15,14 +15,14 @@ Material::Material()
 	shininess = 0.f;
 }
 
-// Crée un matériaux à partir d'un autre
+// CrÃ©e un matÃ©riaux Ã  partir d'un autre
 
 Material::Material(const Material& other)
 {
 	*this = other;
 }
 
-// Crée un matériaux à partir de ces propriétés
+// CrÃ©e un matÃ©riaux Ã  partir de ces propriÃ©tÃ©s
 
 Material::Material(const Color& color, float ambient, float diffuse, float specular, float shininess)
 {
@@ -33,7 +33,7 @@ Material::Material(const Color& color, float ambient, float diffuse, float specu
 	this->shininess = shininess;
 }
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 Material& Material::operator=(const Material& other)
 {
@@ -60,42 +60,42 @@ void Material::set_color(const Color& color)
 	this->color = color;
 }
 
-// Donne le niveau de lumière ambiente
+// Donne le niveau de lumiÃ¨re ambiente
 
 float Material::get_ambient() const
 {
 	return ambient;
 }
 
-// Change le niveau de lumière ambiente
+// Change le niveau de lumiÃ¨re ambiente
 
 void Material::set_ambient(float ambient)
 {
 	this->ambient = normalize(ambient);
 }
 
-// Donne le niveau de lumière diffuse
+// Donne le niveau de lumiÃ¨re diffuse
 
 float Material::get_diffuse() const
 {
 	return diffuse;
 }
 
-// Change le niveau de lumière diffuse
+// Change le niveau de lumiÃ¨re diffuse
 
 void Material::set_diffuse(float diffuse)
 {
 	this->diffuse = normalize(diffuse);
 }
 
-// Donne le niveau de lumière spéculaire
+// Donne le niveau de lumiÃ¨re spÃ©culaire
 
 float Material::get_specular() const
 {
 	return specular;
 }
 
-// Change le niveau de lumière spéculaire
+// Change le niveau de lumiÃ¨re spÃ©culaire
 
 void Material::set_specular(float specular)
 {

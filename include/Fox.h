@@ -3,7 +3,7 @@
 
 #include "Mob.h"
 
-// Classe définissant un renard
+// Classe dÃ©finissant un renard
 
 class Fox : public Mob
 {
@@ -12,7 +12,7 @@ class Fox : public Mob
 		Part		muzzle;				// Museau
 		Part		ear_1;				// Oreille gauche
 		Part		ear_2;				// Oreille droite
-		Part		head;				// Tête
+		Part		head;				// TÃªte
 		Part		tail;				// Queue
 		Part		leg;				// Jambe
 		Part		tailbase;			// Base de la queue
@@ -20,11 +20,11 @@ class Fox : public Mob
 		Part		shoulder_2;			// Epaule droite
 		Part		hips_1;				// Hanche gauche
 		Part		hips_2;				// Hanche droite
-		glm::mat4	shoulder_1_initial;	// Matrice initiale de l'épaule gauche
-		glm::mat4	shoulder_2_initial;	// Matrice initiale de l'épaule droite
+		glm::mat4	shoulder_1_initial;	// Matrice initiale de l'Ã©paule gauche
+		glm::mat4	shoulder_2_initial;	// Matrice initiale de l'Ã©paule droite
 		glm::mat4	hips_1_initial;		// Matrice initiale de la hanche gauche
 		glm::mat4	hips_2_initial;		// Matrice initiale de la hanche droite
-		glm::mat4	head_initial;		// Matrice initiale de la tête
+		glm::mat4	head_initial;		// Matrice initiale de la tÃªte
 		glm::mat4	tail_initial;		// Matrice initiale de la queue
 
 

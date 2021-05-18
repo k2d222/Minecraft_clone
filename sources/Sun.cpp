@@ -16,7 +16,7 @@ void Sun::init()
 	light.set_vector(glm::normalize(-get_position()));
 }
 
-// Met à jour le soleil
+// Met Ã  jour le soleil
 
 void Sun::update(const glm::vec3& player_pos)
 {

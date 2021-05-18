@@ -3,25 +3,25 @@
 
 #include "utils.h"
 
-// Classe définissant une caméra
+// Classe dÃ©finissant une camÃ©ra
 
 class Camera
 {
 private:
 
-	glm::vec3				position;					// Position de la caméra
-	float					sensitivity;				// Sensibilité de la souris
+	glm::vec3				position;					// Position de la camÃ©ra
+	float					sensitivity;				// SensibilitÃ© de la souris
 	float					fov;						// Champ de vision
 	glm::mat4				view;						// Matrice de vue
 	glm::mat4				projection;					// Matrice de projection
-	glm::vec3				direction;					// Direction de la caméra
-	float					yaw;						// Déplacement horizontal de la direction
-	float					pitch;						// Déplacement vertical de la direction
+	glm::vec3				direction;					// Direction de la camÃ©ra
+	float					yaw;						// DÃ©placement horizontal de la direction
+	float					pitch;						// DÃ©placement vertical de la direction
 
 public:
 
-	static constexpr float	default_fov = pi / 4.f;		// Champs de vision par défaut
-	static constexpr float	default_sensitivity = 0.2f;	// Champs de vision par défaut
+	static constexpr float	default_fov = pi / 4.f;		// Champs de vision par dÃ©faut
+	static constexpr float	default_sensitivity = 0.2f;	// Champs de vision par dÃ©faut
 
 							Camera(const Camera& other);
 							Camera(const glm::vec3& position = glm::vec3(0.f, 0.f, 0.f), float sensitivity = default_sensitivity, float fov = default_fov);

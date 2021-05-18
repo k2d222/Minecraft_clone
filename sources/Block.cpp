@@ -4,7 +4,7 @@
 
 Block Block::air = Block(Block::Type::Air, glm::ivec3(), NULL);
 
-// Crée un bloc
+// CrÃ©e un bloc
 
 Block::Block()
 {
@@ -15,14 +15,14 @@ Block::Block()
 	faces_orientation.fill(0);
 }
 
-// Crée un bloc à partir d'un autre
+// CrÃ©e un bloc Ã  partir d'un autre
 
 Block::Block(const Block& other)
 {
 	*this = other;
 }
 
-// Crée un bloc à partir de ces propriétés
+// CrÃ©e un bloc Ã  partir de ces propriÃ©tÃ©s
 
 Block::Block(Type type, const glm::ivec3& position, Chunk* chunk)
 {
@@ -34,7 +34,7 @@ Block::Block(Type type, const glm::ivec3& position, Chunk* chunk)
 	set_type(type, false);
 }
 
-// Opérateur égal
+// OpÃ©rateur Ã©gal
 
 Block& Block::operator=(const Block& other)
 {
@@ -54,7 +54,7 @@ bool Block::is_plant() const
 	return type == Type::Weed || type == Type::TallWeedBottom || type == Type::TallWeebTop || type == Type::Tulip || type == Type::Orchid || type == Type::Dandelion;
 }
 
-// Dit si le bloc en paramètre est transparent du point de vu du bloc courant
+// Dit si le bloc en paramÃ¨tre est transparent du point de vu du bloc courant
 
 bool Block::is_transparent(const Block& block) const
 {
@@ -76,7 +76,7 @@ void Block::set_type(Type type, bool update_block)
 {
 	this->type = type;
 
-	// Donne une orientation aléatoire de la face du dessus
+	// Donne une orientation alÃ©atoire de la face du dessus
 	if (type == Type::Grass)
 		faces_orientation[4] = random_int(0, 4);
 
@@ -91,7 +91,7 @@ void Block::set_type(Type type, bool update_block)
 		if (position.y < chunk->layer_min)
 			chunk->layer_min = std::max(uint16_t(position.y - 1), uint16_t(0));
 
-		// Les plantes ne peuvent pas être en l'air
+		// Les plantes ne peuvent pas Ãªtre en l'air
 		if (type == Type::Air && (*chunk)[position + glm::ivec3(0, 1, 0)].is_plant())
 			(*chunk)[position + glm::ivec3(0, 1, 0)].set_type(Type::Air, true);
 
@@ -110,7 +110,7 @@ void Block::set_type(Type type, bool update_block)
 	}
 }
 
-// Met à jour une face d'un bloc
+// Met Ã  jour une face d'un bloc
 
 void Block::update_face(uint8_t face_id)
 {
@@ -151,7 +151,7 @@ void Block::update_face(uint8_t face_id)
 	}
 }
 
-// Met à jour les faces d'un bloc et possiblement les faces des cubes autours
+// Met Ã  jour les faces d'un bloc et possiblement les faces des cubes autours
 
 void Block::update(bool update_around, uint8_t direction_id)
 {
@@ -162,7 +162,7 @@ void Block::update(bool update_around, uint8_t direction_id)
 
 		if (update_around)
 		{
-			// Met à jour toutes les faces autour
+			// Met Ã  jour toutes les faces autour
 
 			if (direction_id > 5)
 			{
@@ -174,7 +174,7 @@ void Block::update(bool update_around, uint8_t direction_id)
 				(*chunk)[glm::ivec3(position.x, position.y + 1, position.z)].update_face(5);
 			}
 
-			// Met à jour la face autour choisie
+			// Met Ã  jour la face autour choisie
 
 			else
 				switch (direction_id)
@@ -194,7 +194,7 @@ void Block::update(bool update_around, uint8_t direction_id)
 				}
 		}
 
-		// Met à jour les faces du bloc
+		// Met Ã  jour les faces du bloc
 
 		faces_shown.fill(false);
 
@@ -221,7 +221,7 @@ void Block::update(bool update_around, uint8_t direction_id)
 	}
 }
 
-// Ajoute les coordonnées de texture aux vertices du chunk
+// Ajoute les coordonnÃ©es de texture aux vertices du chunk
 
 void Block::add_texcoords(uint8_t face_id, uint8_t x, uint8_t y, std::vector<float>& texcoords) const
 {
@@ -234,7 +234,7 @@ void Block::add_texcoords(uint8_t face_id, uint8_t x, uint8_t y, std::vector<flo
 			texcoords.push_back(oriented_top_texcoord(faces_orientation[face_id])[i] * texture_ratio + (i % 2 == 0 ? x * texture_ratio : y * texture_ratio));
 }
 
-// Sélectionne les coordonnées de texture à envoyer en fonction du type de bloc
+// SÃ©lectionne les coordonnÃ©es de texture Ã  envoyer en fonction du type de bloc
 
 void Block::send_texcoords(uint8_t face_id, std::vector<float>& texcoords) const
 {
